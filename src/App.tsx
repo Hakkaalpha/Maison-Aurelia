@@ -56,7 +56,7 @@ export const App: React.FC = () => {
     <CartProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#FAFAFA] text-[#0B0C10] flex flex-col font-sans selection:bg-[#B89653] selection:text-white">
+        <div className="min-h-screen bg-[#0B0C0E] text-white flex flex-col font-sans selection:bg-[#C6A45E] selection:text-black">
           {/* Sticky Navbar with Announcement Bar */}
           <Navbar />
 

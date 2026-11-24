@@ -19,14 +19,14 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-aurelia-obsidian text-white border-t border-aurelia-gold/30 pt-16 pb-12 font-ui">
+    <footer className="w-full bg-[#0B0C0E] text-white border-t border-white/10 pt-16 pb-12 select-none">
       
       {/* 100% Website-Exclusive Golden Header Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="rounded-xl bg-gradient-to-r from-stone-950 via-aurelia-charcoal to-stone-950 border border-aurelia-gold/40 p-4 text-center shadow-lg">
-          <span className="text-[10px] sm:text-xs uppercase tracking-super font-bold text-aurelia-gold flex items-center justify-center gap-2">
-            <Lock className="w-3.5 h-3.5 text-aurelia-gold" />
-            <span>EXCLUSIVE TO AURELIAPRIVE.COM • NEVER SOLD ON ANY OTHER APP OR MARKETPLACE</span>
+        <div className="rounded-2xl bg-[#14161A] border border-[#C6A45E]/40 p-4 text-center shadow-lg">
+          <span className="text-[10px] sm:text-xs uppercase tracking-widest font-mono font-bold text-[#C6A45E] flex items-center justify-center gap-2">
+            <Lock className="w-3.5 h-3.5" />
+            <span>STRICTLY SOLD ONLY ON AURELIAPRIVE.COM • NEVER AVAILABLE ON ANY OTHER APP</span>
           </span>
         </div>
       </div>
@@ -35,11 +35,11 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 border-b border-white/10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex items-start gap-3.5">
-            <div className="w-11 h-11 rounded bg-stone-900 border border-aurelia-gold/40 flex items-center justify-center text-aurelia-gold flex-shrink-0">
+            <div className="w-11 h-11 rounded-xl bg-white/5 border border-[#C6A45E]/40 flex items-center justify-center text-[#C6A45E] flex-shrink-0">
               <Lock className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-white tracking-wide">100% Website Exclusive</h4>
+              <h4 className="font-condensed font-bold text-base text-white tracking-wide uppercase">Never Sold on Any App</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
                 Strictly direct-to-collector. Never sold on Amazon, Flipkart, or third-party retail apps.
               </p>
@@ -47,11 +47,11 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <div className="w-11 h-11 rounded bg-stone-900 border border-aurelia-gold/40 flex items-center justify-center text-aurelia-gold flex-shrink-0">
+            <div className="w-11 h-11 rounded-xl bg-white/5 border border-[#C6A45E]/40 flex items-center justify-center text-[#C6A45E] flex-shrink-0">
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-white tracking-wide">Numbered Certificate</h4>
+              <h4 className="font-condensed font-bold text-base text-white tracking-wide uppercase">Numbered Certificate</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
                 Every creation comes with a wax-sealed, laser-engraved titanium card registered in our vault.
               </p>
@@ -59,11 +59,11 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <div className="w-11 h-11 rounded bg-stone-900 border border-aurelia-gold/40 flex items-center justify-center text-aurelia-gold flex-shrink-0">
-              <Navigation className="w-5 h-5 text-aurelia-gold" />
+            <div className="w-11 h-11 rounded-xl bg-white/5 border border-[#C6A45E]/40 flex items-center justify-center text-[#C6A45E] flex-shrink-0">
+              <Navigation className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-white tracking-wide">Blinkit-Style Live GPS</h4>
+              <h4 className="font-condensed font-bold text-base text-white tracking-wide uppercase">Blinkit-Style Live GPS</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
                 Real-time satellite GPS tracking of our armored Maybach fleet from C-Scheme vault to your doorstep.
               </p>
@@ -71,11 +71,11 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <div className="w-11 h-11 rounded bg-stone-900 border border-aurelia-gold/40 flex items-center justify-center text-aurelia-gold flex-shrink-0">
+            <div className="w-11 h-11 rounded-xl bg-white/5 border border-[#C6A45E]/40 flex items-center justify-center text-[#C6A45E] flex-shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-white tracking-wide">24/7 AI Private Concierge</h4>
+              <h4 className="font-condensed font-bold text-base text-white tracking-wide uppercase">24/7 AI Concierge</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
                 Private liaison desk for bespoke initials, special vault viewings, and personal dispatch.
               </p>
@@ -91,17 +91,17 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-sm bg-aurelia-gold/20 border border-aurelia-gold flex items-center justify-center text-aurelia-gold font-serif font-bold text-base">
+              <div className="w-8 h-8 rounded bg-[#14161A] border border-[#C6A45E] flex items-center justify-center text-[#C6A45E] font-condensed font-bold text-base">
                 MA
               </div>
-              <span className="font-serif font-bold text-xl tracking-widest uppercase">
-                Maison <span className="text-aurelia-gold italic font-normal">Aurelia</span>
+              <span className="font-condensed font-bold text-xl tracking-widest uppercase">
+                MAISON <span className="text-[#C6A45E]">AURELIA</span>
               </span>
             </div>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
               An independent European luxury house crafting 20 rare serialized lifestyle objects across Swiss Horology, Tuscan Leather, Haute Parfumerie, and High-Grade Materials.
             </p>
-            <div className="inline-flex items-center gap-2 bg-stone-900 border border-white/10 px-3 py-1.5 rounded text-[11px] text-stone-300">
+            <div className="inline-flex items-center gap-2 bg-[#14161A] border border-white/10 px-3 py-1.5 rounded-lg text-[11px] text-stone-300">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>C-Scheme Flagship Vault & Armored Courier Fleet Active</span>
             </div>
@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
 
           {/* Categories */}
           <div>
-            <h5 className="font-serif font-bold text-xs uppercase tracking-widest text-aurelia-gold mb-4">
+            <h5 className="font-condensed font-bold text-xs uppercase tracking-widest text-[#C6A45E] mb-4">
               Maison Disciplines
             </h5>
             <ul className="space-y-2.5 text-xs text-stone-400">
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
                 <li key={cat.name}>
                   <Link
                     to={`/category/${encodeURIComponent(cat.name)}`}
-                    className="hover:text-aurelia-gold transition-colors"
+                    className="hover:text-[#C6A45E] transition-colors"
                   >
                     {cat.name}
                   </Link>
@@ -128,78 +128,84 @@ export const Footer: React.FC = () => {
 
           {/* Quick Access */}
           <div>
-            <h5 className="font-serif font-bold text-xs uppercase tracking-widest text-aurelia-gold mb-4">
+            <h5 className="font-condensed font-bold text-xs uppercase tracking-widest text-[#C6A45E] mb-4">
               Private Services
             </h5>
             <ul className="space-y-2.5 text-xs text-stone-400">
               <li>
-                <Link to="/track" className="hover:text-aurelia-gold transition-colors flex items-center gap-1.5 text-white font-semibold">
-                  <span>Live GPS Courier Tracking</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <Link to="/track" className="hover:text-[#C6A45E] transition-colors flex items-center gap-1.5">
+                  <Navigation className="w-3.5 h-3.5 text-[#C6A45E]" />
+                  <span>Live Maybach GPS</span>
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="hover:text-aurelia-gold transition-colors">
-                  All 20 Serialized Pieces
+                <Link to="/checkout" className="hover:text-[#C6A45E] transition-colors">
+                  Handover Desk
                 </Link>
               </li>
               <li>
-                <Link to="/shop?filter=limited" className="hover:text-aurelia-gold transition-colors">
-                  Limited Editions (1 of 10)
+                <Link to="/shop?filter=limited" className="hover:text-[#C6A45E] transition-colors">
+                  Limited Allocation Run
                 </Link>
               </li>
               <li>
-                <Link to="/checkout" className="hover:text-aurelia-gold transition-colors">
-                  White-Glove Checkout
-                </Link>
+                <a href="#vault" className="hover:text-[#C6A45E] transition-colors">
+                  Provenance Ledger
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Private Invitation */}
+          {/* Collector Gazette Signup */}
           <div>
-            <h5 className="font-serif font-bold text-xs uppercase tracking-widest text-aurelia-gold mb-4">
-              Private Registry
+            <h5 className="font-condensed font-bold text-xs uppercase tracking-widest text-[#C6A45E] mb-4">
+              Private Allocation Dispatch
             </h5>
             <p className="text-xs text-stone-400 mb-3 leading-relaxed">
-              Register your private email to receive advance allocation notices 48 hours prior to public vault opening.
+              Receive confidential notices 48 hours prior to new limited batch releases.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-2">
-              <div className="relative">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter private email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-3 pr-9 py-2 rounded bg-stone-900 border border-white/10 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-aurelia-gold"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-1 top-1 w-7 h-7 rounded bg-aurelia-gold text-aurelia-obsidian flex items-center justify-center hover:bg-white transition-colors"
-                >
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-              {subscribed && (
-                <div className="flex items-center gap-1 text-xs text-aurelia-gold font-bold">
-                  <Check className="w-3.5 h-3.5" /> Registered. Welcome to Maison Aurelia.
-                </div>
-              )}
+              <input
+                type="email"
+                placeholder="Enter private email..."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-[#C6A45E]"
+                required
+              />
+              <button
+                type="submit"
+                className="w-full py-2 rounded-lg bg-[#C6A45E] hover:bg-[#d8b874] text-[#0B0C0E] font-condensed font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5"
+              >
+                {subscribed ? (
+                  <>
+                    <Check className="w-3.5 h-3.5" />
+                    <span>Member Registered</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Request Invitation</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </>
+                )}
+              </button>
             </form>
           </div>
-        </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-4">
-        <p>© 2026 Maison Aurelia Atelier. All rights reserved. Strictly Direct-to-Collector Exclusive.</p>
-        <div className="flex items-center gap-6">
-          <span className="hover:text-stone-300 cursor-pointer">Certificate Registry</span>
-          <span className="hover:text-stone-300 cursor-pointer">White-Glove Handover Protocol</span>
-          <span className="hover:text-stone-300 cursor-pointer">Discretion & Privacy</span>
+        </div>
+
+        {/* Copyright & Bottom Seal */}
+        <div className="pt-10 mt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-4">
+          <p>© {new Date().getFullYear()} MAISON AURELIA PRIVÉ. ALL RIGHTS RESERVED. ZERO MARKETPLACE DISTRIBUTION.</p>
+          <div className="flex items-center gap-6">
+            <span className="text-stone-400">Strictly Direct-to-Collector</span>
+            <span>•</span>
+            <span className="text-stone-400">Geneva • Neuchâtel • Florence • Jaipur</span>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
+
+export default Footer;

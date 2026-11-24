@@ -188,7 +188,7 @@ export const CheckoutPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <Lock className="w-3.5 h-3.5 text-aurelia-gold" />
             <span className="font-semibold uppercase tracking-wider text-[11px] text-aurelia-gold">
-              EXCLUSIVE TO AURELIAPRIVE.COM • NEVER LISTED ON THIRD-PARTY APPS
+              STRICTLY SOLD ONLY ON AURELIAPRIVE.COM • NEVER AVAILABLE ON ANY OTHER APP
             </span>
           </div>
           <span className="hidden sm:inline text-stone-400 text-[10px] uppercase tracking-widest font-mono">

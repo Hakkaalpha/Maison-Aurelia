@@ -29,9 +29,19 @@ export interface Product {
   featured?: boolean;
   trending?: boolean;
   edition: string;           // e.g. "Edition of 10"
+  editionLabel: string;      // e.g. "Edition of 10"
   editionNumber: number;     // e.g. 10
   claimed: number;           // e.g. 8
   remaining: number;         // e.g. 2
+  accentColor: string;       // e.g. "#5C6942" (Tactical Olive), "#3E82C4" (Cobalt Azure)
+  accentName?: string;       // e.g. "Tactical Olive"
+  architecturalTitle?: string; // e.g. "SUBMERSIBLE TOURBILLON / 42MM TITANIUM"
+  lumeImage?: string;
+  campaignVideo?: {
+    title: string;
+    subtitle: string;
+    duration: string;
+  };
   materials: string[];       // e.g. ["Swiss Manual-Wind Movement", "Curved Double-Dome Sapphire", "Grade-5 Titanium"]
   provenance: string;        // e.g. "Geneva, Switzerland"
   features: string[];

@@ -8,19 +8,26 @@ export default {
     extend: {
       colors: {
         aurelia: {
-          obsidian: "#0B0C10",     // Deep Obsidian Black
-          charcoal: "#17181F",     // Charcoal Vault
-          slate: "#252733",        // Deep Slate
-          gold: "#B89653",         // Brushed Champagne Gold
+          obsidian: "#0B0C0E",     // Matte Obsidian Black
+          charcoal: "#14161A",     // Charcoal Vault
+          slate: "#21242C",        // Deep Slate
+          gold: "#C6A45E",         // Champagne Gold
           goldLight: "#F8F5EE",    // Delicate Gold Glow
           goldBorder: "#E2D3B8",   // Refined Gold Accent Border
-          goldDark: "#8C6E33",
+          goldDark: "#947636",
           alabaster: "#FAFAFA",    // Alabaster White Background
           pure: "#FFFFFF",
           border: "#EAE6DF",       // Warm Luxury Architectural Border
           borderSubtle: "#F2EFEB",
           muted: "#737580",
           cream: "#FAF8F5",
+          // Per-product signature accent panels
+          azure: "#3E82C4",
+          olive: "#5C6942",
+          amber: "#C26D38",
+          burgundy: "#782C3A",
+          titanium: "#465669",
+          emerald: "#2E6B56",
         },
         prive: {
           obsidian: "#0B0C10",
@@ -39,8 +46,9 @@ export default {
         }
       },
       fontFamily: {
+        condensed: ['"Barlow Condensed"', '"Oswald"', 'sans-serif'],
+        display: ['"Barlow Condensed"', '"Oswald"', 'sans-serif'],
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
         ui: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },

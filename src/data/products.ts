@@ -1,911 +1,928 @@
 import { Product, MaisonCategory } from '../types';
 
-export const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85';
+export const FALLBACK_IMAGE =
+  'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop';
 
 export const MAISON_CATEGORIES: {
   name: MaisonCategory;
-  icon: string;
-  count: number;
   tagline: string;
+  itemCount: number;
   image: string;
 }[] = [
   {
     name: 'Horology',
-    icon: 'Watch',
-    count: 4,
-    tagline: 'Swiss Tourbillons, Moonphase Calibres & Hand-Engineered Dials',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=85'
+    tagline: 'Swiss Tourbillons & In-House Complications',
+    itemCount: 4,
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'Bespoke Leather',
-    icon: 'Briefcase',
-    count: 4,
-    tagline: 'Tuscan Full-Grain Weekenders, Briefcases & Suede Watch Vaults',
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=85'
+    tagline: 'Tuscan Full-Grain & Saddle-Stitched Trunks',
+    itemCount: 4,
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'Haute Parfumerie',
-    icon: 'Sparkles',
-    count: 3,
-    tagline: 'Aged Assam Oud Extraits, Pure Ambergris & Crystal Flacons',
-    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85'
+    tagline: 'Aged Wild Oud Extraits & Rare Attars',
+    itemCount: 3,
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'Eyewear & Pens',
-    icon: 'Glasses',
-    count: 3,
-    tagline: 'Japanese Beta-Titanium Frames & 18K Hand-Engraved Gold Nibs',
-    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85'
+    tagline: 'Beta-Titanium & 18K Nib Instruments',
+    itemCount: 3,
+    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'Collector Objects',
-    icon: 'Compass',
-    count: 3,
-    tagline: 'Calacatta Marble Chess Sets, Brass Espresso & Celestial Orreries',
-    image: 'https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=800&q=85'
+    tagline: 'Calacatta Marble & Solid Brass Kinetic Arts',
+    itemCount: 3,
+    image: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'Atelier Audio',
-    icon: 'Headphones',
-    count: 3,
-    tagline: 'Planar Beryllium Transducers & Solid CZ121 Brass Acoustics',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=85'
+    tagline: 'Planar Magnetic & Billet Titanium Acoustics',
+    itemCount: 3,
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop'
   }
 ];
 
 export const PRODUCTS: Product[] = [
+  // 1. Submersible Automatic 42mm Carbotech™ (FLAGSHIP 1)
   {
-    id: 'aurelia-tourbillon-skeleton-chronometer',
-    sku: 'AU-HOR-001',
-    name: 'Aurelia Tourbillon Skeleton Chronometer',
-    subtitle: 'Swiss Flying Tourbillon with Hand-Polished Bridges & Double-Dome Sapphire',
+    id: 'submersible-carbotech-42mm',
+    sku: 'AU-HOR-01',
+    name: 'Submersible Automatic 42mm Carbotech™',
+    architecturalTitle: 'SUBMERSIBLE TOURBILLON / 42MM TITANIUM & CARBOTECH™',
+    subtitle: 'Ultra-light carbon fiber composite casing with in-house Calibre P.900 movement',
     category: 'Horology',
     price: 145000,
-    originalPrice: 175000,
+    originalPrice: 195000,
     rating: 5.0,
-    reviewCount: 14,
+    reviewCount: 38,
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop',
+    lumeImage: 'https://images.unsplash.com/photo-1547996160-71dfabb1a7b1?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1547996160-71dfabb1a7b1?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop'
+    ],
+    description:
+      'Engineered in Neuchâtel and finished with an ultra-rigid Carbotech™ composite bezel. Features a matte olive military ceramic ring, Super-LumiNova® indices glowing electric green in low light, and a 3-day power reserve. Strictly limited to 10 serialized exemplars globally.',
     badge: 'Collector First Edition',
     inStock: true,
     featured: true,
     trending: true,
     edition: 'Edition of 10',
+    editionLabel: 'Edition of 10',
     editionNumber: 10,
-    claimed: 8,
-    remaining: 2,
-    materials: ['Grade-5 Titanium & 18K White Gold', 'Curved Sapphire Crystals', 'Hand-Stitched Alligator'],
-    provenance: 'La Chaux-de-Fonds, Switzerland',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'The pinnacle of independent Swiss horology. Engineered with an openworked flying tourbillon cage completing one rotation per 60 seconds. Every bridge is hand-beveled with inward anglages by master watchmakers.',
-    features: [
-      'Manual-wind 3Hz flying tourbillon caliber with 72-hour power reserve',
-      'Double-domed anti-reflective scratchproof sapphire crystal front & exhibition back',
-      'Grade-5 Titanium case with hand-satin brushed flanks and mirror-polished bezels',
-      'Hand-stitched Mississippiensis alligator leather strap with 18K gold deployant clasp'
-    ],
-    specs: [
-      { label: 'Movement', value: 'Calibre AU-01 Manual Tourbillon (21,600 vph)' },
-      { label: 'Power Reserve', value: '72 Hours Twin-Barrel' },
-      { label: 'Case Diameter', value: '41.5mm • 10.8mm Ultra-Thin' },
-      { label: 'Provenance', value: 'Handmade in La Chaux-de-Fonds' },
-      { label: 'Exclusivity', value: 'Strictly 10 Numbered Pieces Worldwide' }
-    ],
-    colors: [
-      { name: 'Titanium Slate & Platinum', hex: '#64748B' },
-      { name: 'Obsidian Rose', hex: '#B89653' }
-    ]
-  },
-  {
-    id: 'palazzo-full-grain-tuscan-weekender',
-    sku: 'AU-LTH-002',
-    name: 'Palazzo Full-Grain Tuscan Weekender Bag',
-    subtitle: 'Hand-Stitched Full-Grain Vegetable-Tanned Leather with Solid Brass Lock',
-    category: 'Bespoke Leather',
-    price: 64500,
-    originalPrice: 78000,
-    rating: 4.9,
-    reviewCount: 22,
-    badge: 'Vault Selection',
-    inStock: true,
-    featured: true,
-    trending: true,
-    edition: 'Edition of 20',
-    editionNumber: 20,
-    claimed: 17,
+    claimed: 7,
     remaining: 3,
-    materials: ['Tuscan Full-Grain Vachetta Leather', 'Solid CZ121 Brass Hardware', 'Herringbone Canvas Lining'],
-    provenance: 'Florence, Italy',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85'
+    accentColor: '#5C6942', // Tactical Olive
+    accentName: 'Tactical Olive',
+    materials: [
+      'Carbotech™ Carbon Matrix Casing',
+      'Grade-5 Titanium DLC Skeleton Caseback',
+      'Super-LumiNova® Grade X1 Lume Dial',
+      'Corundum Double-Curved Sapphire Crystal'
     ],
-    description: 'Cut from pristine Tuscan cowhides tanned with chestnut and mimosa barks over 40 days. Features solid machined brass hardware that ages into a deep warm golden patina.',
+    provenance: 'Neuchâtel & Geneva, Switzerland',
     features: [
-      'Master saddler hand-stitched double leather handles with reinforced brass rivets',
-      'Heavy-gauge YKK Excella gold-teeth zip with lockable brass padlock',
-      'Removable padded shoulder strap and dedicated shoe compartment lined in water-repellent silk'
+      '300M Tested Water Resistance',
+      'Bespoke Waterproof Caoutchouc Accordion Strap',
+      'Twin-Barrel 72-Hour Automatic Reserve',
+      'Serialized Certificate stamped with Atelier seal'
     ],
     specs: [
-      { label: 'Dimensions', value: '52cm x 28cm x 30cm (Approved Cabin Size)' },
-      { label: 'Weight', value: '2.4 kg of Pure Unsplit Calfskin' },
-      { label: 'Tannery', value: 'Pelle Conciata al Vegetale, Tuscany' }
+      { label: 'Movement', value: 'Calibre AU-900 Automatic' },
+      { label: 'Diameter', value: '42.0 mm' },
+      { label: 'Case Material', value: 'Carbotech™ + Grade-5 Titanium' },
+      { label: 'Bezel', value: 'Unidirectional rotating ceramic ring' },
+      { label: 'Power Reserve', value: '72 Hours (Dual Barrel)' },
+      { label: 'Glass', value: '2.5mm Anti-Reflective Sapphire' }
     ],
     colors: [
-      { name: 'Cognac Saddle Brown', hex: '#8B4513' },
-      { name: 'Midnight Obsidian', hex: '#0B0C10' }
-    ]
-  },
-  {
-    id: 'oud-royale-extrait-de-parfum',
-    sku: 'AU-PRF-003',
-    name: 'Oud Royale Extrait de Parfum (100ml)',
-    subtitle: '30-Year Aged Wild Assam Agarwood, Taif Rose & Hand-Cut Crystal Flacon',
-    category: 'Haute Parfumerie',
-    price: 28900,
-    originalPrice: 35000,
-    rating: 5.0,
-    reviewCount: 31,
-    badge: 'Private Reserve',
-    inStock: true,
-    featured: true,
-    trending: false,
-    edition: 'Edition of 30',
-    editionNumber: 30,
-    claimed: 26,
-    remaining: 4,
-    materials: ['Vintage 1994 Assam Oud Oil', 'Heavy Hand-Cut Crystal', 'Solid Brass Dip-Stick Cap'],
-    provenance: 'Grasse, France & Assam, India',
+      { name: 'Tactical Olive & Carbotech', hex: '#5C6942' },
+      { name: 'Pitch Obsidian Black', hex: '#0B0C0E' }
+    ],
     exclusiveOnly: true,
     limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'An uncompromising 40% concentration pure extrait. Formulated around wild harvested agarwood aged for 3 decades, opening with fresh bergamot and blooming into velvet Taif rose, ambergris, and smoky resin.',
-    features: [
-      '40% Extrait de Parfum concentration (lasts 36+ hours on skin)',
-      'Heavy 650g optical crystal flacon faceted like an emerald diamond',
-      'Solid brass cap sealed with red beeswax and numbered authenticity emblem'
-    ],
-    specs: [
-      { label: 'Volume', value: '100ml / 3.4 fl. oz. Extrait' },
-      { label: 'Key Notes', value: 'Assam Oud, Taif Rose, Royal Ambergris, Sandalwood' },
-      { label: 'Maceration', value: '18 Months in French Oak Barrels' }
-    ],
-    colors: [
-      { name: 'Amber Crystal', hex: '#D97706' }
-    ]
+    campaignVideo: {
+      title: 'Submersible Carbotech™ Engineering',
+      subtitle: 'Exploded-view mechanical architecture & carbon fiber matrix',
+      duration: '01:45'
+    }
   },
+
+  // 2. Luminor Marina Carbotech™ 44mm (FLAGSHIP 2)
   {
-    id: 'kyoto-japanese-titanium-aviator-frames',
-    sku: 'AU-EYE-004',
-    name: 'Kyoto Japanese Titanium Aviator Frames',
-    subtitle: 'Laser-Sculpted Beta-Titanium with Carl Zeiss Polarized Glass Lenses',
-    category: 'Eyewear & Pens',
-    price: 34500,
-    originalPrice: 42000,
-    rating: 4.9,
-    reviewCount: 19,
-    badge: 'Limited Atelier',
-    inStock: true,
-    featured: true,
-    trending: false,
-    edition: 'Edition of 25',
-    editionNumber: 25,
-    claimed: 21,
-    remaining: 4,
-    materials: ['Japanese Beta-Titanium', 'Mineral Glass Zeiss Polarized', 'Ceramic Nose Pads'],
-    provenance: 'Fukui Prefecture, Japan',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Weighing a mere 14 grams, hand-finished in the historic eyewear capital of Sabae, Japan. The beta-titanium alloy flexes effortlessly to adapt to any facial structure while retaining permanent shape memory.',
-    features: [
-      'Ultralight 14g aerospace beta-titanium chassis',
-      'Carl Zeiss mineral glass lenses with 10-layer anti-reflective & polarization coating',
-      'Medical-grade hypollergenic polished ceramic nose pads'
-    ],
-    specs: [
-      { label: 'Frame Weight', value: '14.2 grams' },
-      { label: 'Lens Material', value: 'Optically Pure Polarized Mineral Glass' },
-      { label: 'Origin', value: 'Sabae, Fukui, Japan' }
-    ],
-    colors: [
-      { name: 'Brushed Champagne Gold', hex: '#B89653' },
-      { name: 'Matte Titanium Smoke', hex: '#475569' }
-    ]
-  },
-  {
-    id: 'calacatta-marble-brass-chess-set',
-    sku: 'AU-OBJ-005',
-    name: 'Calacatta Marble & Brass Chess Set',
-    subtitle: 'Monolithic Italian Calacatta Gold & Marquina Black Stone with Solid Brass Pieces',
-    category: 'Collector Objects',
-    price: 78000,
-    originalPrice: 95000,
-    rating: 5.0,
-    reviewCount: 16,
-    badge: 'Collector First Edition',
-    inStock: true,
-    featured: true,
-    trending: true,
-    edition: 'Edition of 15',
-    editionNumber: 15,
-    claimed: 13,
-    remaining: 2,
-    materials: ['Italian Calacatta Gold Marble', 'Nero Marquina Marble', 'Solid Lathed CZ121 Brass'],
-    provenance: 'Carrara, Italy',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'A monument of architectural sculpture and intellectual pursuit. The 16kg board is water-jet sculpted from book-matched Italian marble slabs, paired with 32 hand-lathed solid brass and black chrome pieces.',
-    features: [
-      '16 Kilogram solid dual-stone marble chessboard with chamfered perimeter',
-      'Solid brass chess pieces each weighted with lead cores and felt base pads',
-      'Handmade leather velvet storage casket with personalized brass serial plaque'
-    ],
-    specs: [
-      { label: 'Board Size', value: '45cm x 45cm x 3.5cm Solid Stone' },
-      { label: 'King Height & Weight', value: '98mm • 140 grams per piece' },
-      { label: 'Total Weight', value: '18.5 kg Complete Heirloom Set' }
-    ],
-    colors: [
-      { name: 'Calacatta White & Nero Gold', hex: '#E2E8F0' }
-    ]
-  },
-  {
-    id: 'aurelia-reference-planar-magnetic-headphones',
-    sku: 'AU-AUD-006',
-    name: 'Aurelia Reference Planar Magnetic Headphones',
-    subtitle: 'Grade-5 Titanium Gimbal, Planar-Magnetic Drivers & Italian Nappa Leather',
-    category: 'Atelier Audio',
-    price: 68500,
-    originalPrice: 85000,
-    rating: 5.0,
-    reviewCount: 38,
-    badge: 'Vault Selection',
-    inStock: true,
-    featured: true,
-    trending: true,
-    edition: 'Edition of 25',
-    editionNumber: 25,
-    claimed: 23,
-    remaining: 2,
-    materials: ['Grade-5 Titanium Billets', 'Tuscan Full-Grain Nappa', 'Beryllium Planar Drivers'],
-    provenance: 'London & Geneva',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'The definitive acoustic statement for private listening rooms. Machined from solid Grade-5 titanium billets with diamond-cut acoustic grilles, housing 50mm ultra-thin planar-magnetic transducers calibrated to ±0.25dB studio tolerance.',
-    features: [
-      'Custom 50mm Planar-Magnetic Diaphragms with sub-1ms transient response',
-      'Solid Grade-5 Titanium articulated headband and bespoke CNC gimbals',
-      'Hand-stitched Tuscan vegetable-tanned leather headband with memory core',
-      'Quad-microphone hybrid active noise cancellation (-42dB isolation)'
-    ],
-    specs: [
-      { label: 'Transducer', value: '50mm Planar Magnetic with Neo-N54' },
-      { label: 'Frequency Response', value: '5Hz – 52,000Hz Ultra-Wide' },
-      { label: 'Total Harmonic Distortion', value: '< 0.03% @ 1kHz' }
-    ],
-    colors: [
-      { name: 'Brushed Raw Titanium', hex: '#87868A' },
-      { name: 'Obsidian Black DLC', hex: '#0B0C10' }
-    ]
-  },
-  {
-    id: 'heritage-moonphase-rose-gold-watch',
-    sku: 'AU-HOR-007',
-    name: 'Heritage Moonphase Rose-Gold Dress Watch',
-    subtitle: '18K Rose Gold Plated Case with Lapis Lazuli Astronomical Moonphase Disc',
+    id: 'luminor-marina-carbotech-44mm',
+    sku: 'AU-HOR-02',
+    name: 'Luminor Marina Carbotech™ 44mm',
+    architecturalTitle: 'LUMINOR MARINA / 44MM CARBOTECH™ AZURE',
+    subtitle: 'Signature patented crown-protecting bridge with deep ocean cobalt dial',
     category: 'Horology',
-    price: 118000,
-    originalPrice: 140000,
+    price: 132000,
+    originalPrice: 178000,
     rating: 4.9,
-    reviewCount: 18,
+    reviewCount: 29,
+    image: 'https://images.unsplash.com/photo-1547996160-71dfabb1a7b1?q=80&w=1200&auto=format&fit=crop',
+    lumeImage: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1547996160-71dfabb1a7b1?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop'
+    ],
+    description:
+      'The definitive architectural timepiece. Layered carbon fiber creates a unique woodgrain pattern on every single watch. Paired with a sun-brushed cobalt azure sandwich dial and luminous Arabic numerals. Zero retail availability.',
     badge: 'Numbered Run',
     inStock: true,
     featured: true,
-    trending: false,
-    edition: 'Edition of 12',
-    editionNumber: 12,
-    claimed: 10,
-    remaining: 2,
-    materials: ['18K Rose-Gold over 316L Steel', 'Natural Lapis Lazuli Dial', 'Cognac Alligator Leather'],
-    provenance: 'Glashütte, Germany',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85'
+    trending: true,
+    edition: 'Edition of 15',
+    editionLabel: 'Edition of 15',
+    editionNumber: 15,
+    claimed: 11,
+    remaining: 4,
+    accentColor: '#3E82C4', // Cobalt Azure
+    accentName: 'Cobalt Azure',
+    materials: [
+      'High-Density Carbotech™ Sheets',
+      'Titanium Caseback with Black DLC Coating',
+      'Azure Blue Sandwich Dial Plate',
+      'Fluorocarbon Scuba Strap'
     ],
-    description: 'A poetic celebration of celestial mechanics. An astronomical moonphase disk crafted from genuine royal lapis lazuli stone with laser-etched gold celestial stars, accurate for 122 years without adjustment.',
+    provenance: 'Le Locle, Switzerland',
     features: [
-      'Precision automatic caliber with 28,800 vibrations/hour and 48H reserve',
-      'Astronomical true-moonphase display utilizing genuine Afghan lapis lazuli stone',
-      'Guilloché silver opaline dial with blued steel Breguet hands'
+      'Iconic Lever Safety Crown Guard',
+      'Sandwich Dial Construction for Max Night Lume',
+      'Incabloc® Anti-Shock Protection',
+      'Laser-Etched Individual Vault Serial'
     ],
     specs: [
-      { label: 'Movement', value: 'Calibre AU-Moon Automatic (Glashütte)' },
-      { label: 'Case Diameter', value: '39.5mm Classic Dress Profile' },
-      { label: 'Water Resistance', value: '5 ATM (50m Splashproof)' }
+      { label: 'Movement', value: 'Calibre AU-801 Mechanical' },
+      { label: 'Diameter', value: '44.0 mm' },
+      { label: 'Strap', value: 'Sportech™ Azure with Ecru stitching' },
+      { label: 'Weight', value: '98g (Ultra Lightweight)' }
     ],
     colors: [
-      { name: 'Rose Gold & Lapis Blue', hex: '#B89653' }
-    ]
+      { name: 'Cobalt Azure', hex: '#3E82C4' },
+      { name: 'Matte Carbon', hex: '#14161A' }
+    ],
+    exclusiveOnly: true,
+    limitedEdition: true,
+    campaignVideo: {
+      title: 'Luminor Marina Crown Bridge Assembly',
+      subtitle: 'Compression-molded carbon layers & hydraulic crown lock',
+      duration: '02:10'
+    }
   },
+
+  // 3. Palazzo Full-Grain Tuscan Weekender Trunk (FLAGSHIP 3)
   {
-    id: 'florence-structured-leather-briefcase',
-    sku: 'AU-LTH-008',
-    name: 'Florence Structured Leather Briefcase',
-    subtitle: 'Reinforced English Bridle Leather with Solid Brass Sentry Lock',
+    id: 'palazzo-tuscan-weekender-trunk',
+    sku: 'AU-LEA-01',
+    name: 'Palazzo Full-Grain Tuscan Weekender Trunk',
+    architecturalTitle: 'PALAZZO TUSCAN TRUNK / FULL-GRAIN VACHETTA',
+    subtitle: 'Hand-burnished vegetable-tanned leather with hand-cast solid brass hardware',
     category: 'Bespoke Leather',
-    price: 52000,
-    originalPrice: 62000,
-    rating: 4.8,
-    reviewCount: 25,
+    price: 64500,
+    originalPrice: 89000,
+    rating: 5.0,
+    reviewCount: 42,
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop',
+    lumeImage: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1200&auto=format&fit=crop'
+    ],
+    description:
+      'Curated from third-generation Santa Croce tanneries in Tuscany. Drum-dyed with organic chestnut and mimosa tannins, this weekender trunk is hand-stitched with waxed linen thread and reinforced with solid brass studs and dual combination locks.',
+    badge: 'Private Reserve',
+    inStock: true,
+    featured: true,
+    trending: true,
+    edition: 'Edition of 20',
+    editionLabel: 'Edition of 20',
+    editionNumber: 20,
+    claimed: 16,
+    remaining: 4,
+    accentColor: '#C26D38', // Burnished Amber
+    accentName: 'Burnished Amber',
+    materials: [
+      '3.2mm Tuscan Vachetta Cowhide',
+      'Solid Cast Architectural Brass Latches',
+      'Alcantara Suede Interior Lining',
+      'Hand-Waxed Fil Au Chinois Thread'
+    ],
+    provenance: 'Florence, Italy',
+    features: [
+      'Internal Padded 16" MacBook Compartment',
+      'Dedicated Watch Roll Snap-In Sleeve',
+      'Reinforced Brass Feet & Corner Caps',
+      'Personalized Blind-Debossed Monogram Included'
+    ],
+    specs: [
+      { label: 'Dimensions', value: '52 x 30 x 26 cm' },
+      { label: 'Capacity', value: '44 Litres' },
+      { label: 'Weight', value: '2.6 kg' },
+      { label: 'Origin', value: 'Santa Croce sull’Arno, Italy' }
+    ],
+    colors: [
+      { name: 'Burnished Amber Leather', hex: '#C26D38' },
+      { name: 'Espresso Tuscan Brown', hex: '#3B2317' }
+    ],
+    exclusiveOnly: true,
+    limitedEdition: true,
+    campaignVideo: {
+      title: 'Tuscan Leather Craftsmanship',
+      subtitle: 'Hand-burnished edges & saddle-stitch leather trunk assembly',
+      duration: '01:30'
+    }
+  },
+
+  // 4. Oud Royale Extrait de Parfum (100ml) (FLAGSHIP 4)
+  {
+    id: 'oud-royale-extrait-de-parfum',
+    sku: 'AU-PAR-01',
+    name: 'Oud Royale Extrait de Parfum (100ml)',
+    architecturalTitle: 'OUD ROYALE EXTRAIT / 100ML CRYSTAL FLACON',
+    subtitle: 'Distilled from 35-year aged wild Assam Aquilaria agallocha heartwood',
+    category: 'Haute Parfumerie',
+    price: 28900,
+    originalPrice: 42000,
+    rating: 5.0,
+    reviewCount: 31,
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop',
+    lumeImage: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop'
+    ],
+    description:
+      'A nocturnal masterwork of high perfumery. 38% concentration Extrait de Parfum blending pure wild Assam Oud, Taif damascene rose oil, ambergris tincture, and smoked birch tar. Bottled in hand-polished French crystal with solid brass cap.',
     badge: 'Vault Selection',
     inStock: true,
-    featured: false,
+    featured: true,
+    trending: true,
+    edition: 'Edition of 30',
+    editionLabel: 'Edition of 30',
+    editionNumber: 30,
+    claimed: 24,
+    remaining: 6,
+    accentColor: '#782C3A', // Imperial Burgundy
+    accentName: 'Imperial Burgundy',
+    materials: [
+      '35-Year Wild Assam Agarwood Distillate',
+      'Natural Ambergris & Mysore Sandalwood',
+      'Mouth-Blown French Heavy Crystal Flacon',
+      'Solid 24K Gold-Leaf Electroplated Stopper'
+    ],
+    provenance: 'Grasse, France & Assam, India',
+    features: [
+      'Pure Extrait Concentration (38% Essential Oil)',
+      '18-Hour Skin Longevity & Exceptional Sillage',
+      'Casketed in Lacquered Solid Walnut Presentation Box',
+      'Individual Batch Number Engraved on Flacon Base'
+    ],
+    specs: [
+      { label: 'Volume', value: '100 ml (3.4 fl. oz.)' },
+      { label: 'Concentration', value: 'Extrait de Parfum (38%)' },
+      { label: 'Top Notes', value: 'Taif Rose, Cardamom Pods, Bergamot' },
+      { label: 'Heart Notes', value: 'Aged Assam Oud, Castoreum, Saffron' },
+      { label: 'Base Notes', value: 'White Ambergris, Birch Tar, Mysore Sandal' }
+    ],
+    colors: [
+      { name: 'Imperial Burgundy Flacon', hex: '#782C3A' },
+      { name: 'Smoked Obsidian Crystal', hex: '#0B0C0E' }
+    ],
+    exclusiveOnly: true,
+    limitedEdition: true,
+    campaignVideo: {
+      title: 'The Extraction of Assam Oud',
+      subtitle: 'Hydro-distillation in copper stills & crystal flacon cutting',
+      duration: '01:50'
+    }
+  },
+
+  // 5. Aurelia Reference Planar Magnetic Headphones (FLAGSHIP 5)
+  {
+    id: 'aurelia-reference-planar-headphones',
+    sku: 'AU-AUD-01',
+    name: 'Aurelia Reference Planar Magnetic Headphones',
+    architecturalTitle: 'PLANAR REFERENCE / GRADE-5 TITANIUM ACOUSTICS',
+    subtitle: '100mm ultra-thin nanometer planar drivers with aerospace titanium chassis',
+    category: 'Atelier Audio',
+    price: 68500,
+    originalPrice: 95000,
+    rating: 4.9,
+    reviewCount: 35,
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop',
+    lumeImage: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop'
+    ],
+    description:
+      'Engineered for master audio purists. Open-back architecture with acoustically invisible stealth magnets and 100mm sub-micron diaphragms. Every headband is milled from a single block of Grade-5 Titanium and wrapped in breathable lambskin.',
+    badge: 'Limited Atelier',
+    inStock: true,
+    featured: true,
     trending: true,
     edition: 'Edition of 25',
+    editionLabel: 'Edition of 25',
     editionNumber: 25,
     claimed: 21,
     remaining: 4,
-    materials: ['English Bridle Leather (Wax-Stuffed)', 'Hand-Forged Brass Lock', 'Burgundy Suede'],
-    provenance: 'Florence, Italy',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85'
+    accentColor: '#465669', // Titanium Slate
+    accentName: 'Titanium Slate',
+    materials: [
+      'CNC Milled Grade-5 Titanium Yokes',
+      '100mm Sub-Micron Planar Driver Membrane',
+      'Solid Walnut Outer Acoustic Resonator Grille',
+      'Perforated Lambskin & Memory Foam Cushions'
     ],
-    description: 'Engineered for counsel chambers and boardrooms. Traditional bridle leather infused with natural oils and waxes, producing self-healing properties that brush away surface scuffs.',
+    provenance: 'Sendai, Japan & Zurich, Switzerland',
     features: [
-      'Three partitioned main compartments holding 16" laptop and legal dossiers',
-      'Solid brass 3-digit combination sentry lock with satisfying mechanical click',
-      'Beveled and burnished hand-stained edges sealed with natural beeswax'
+      'Ultra-Wide 5Hz – 55,000Hz Frequency Response',
+      'Detachable OCC Single-Crystal Silver-Plated Cable',
+      'Zero Resonance Open-Back Backplate Waveguide',
+      'Hard Anodized Aluminum Flight Case Included'
     ],
     specs: [
-      { label: 'Capacity', value: '16" MacBook Pro & Legal Folios' },
-      { label: 'Leather Origin', value: 'Tuscan Vegetable Tannery' }
+      { label: 'Transducer', value: '100mm Planar Magnetic' },
+      { label: 'Impedance', value: '32 Ohms (High Sensitivity)' },
+      { label: 'Weight', value: '385g' },
+      { label: 'Connector', value: 'Balanced 4.4mm Pentaconn + 6.35mm' }
     ],
     colors: [
-      { name: 'British Tan', hex: '#9A3412' },
-      { name: 'Onyx Noir', hex: '#0B0C10' }
-    ]
-  },
-  {
-    id: 'ambre-nocturne-private-reserve-scent',
-    sku: 'AU-PRF-009',
-    name: 'Ambre Nocturne Private Reserve Scent',
-    subtitle: 'Rare White Ambergris, Bulgarian Damask Rose & Aged Madagascar Vanilla',
-    category: 'Haute Parfumerie',
-    price: 24500,
-    originalPrice: 30000,
-    rating: 4.9,
-    reviewCount: 29,
-    badge: 'Private Reserve',
-    inStock: true,
-    featured: false,
-    trending: true,
-    edition: 'Edition of 35',
-    editionNumber: 35,
-    claimed: 30,
-    remaining: 5,
-    materials: ['Ethically Sourced White Ambergris', 'Cold-Pressed Damask Rose', 'Smoky Flacon Glass'],
-    provenance: 'Grasse, France',
+      { name: 'Titanium Slate & Carbon', hex: '#465669' },
+      { name: 'Obsidian Matte', hex: '#0B0C0E' }
+    ],
     exclusiveOnly: true,
     limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'An intoxicating evening formulation built on vintage natural ambergris, providing a salty, skin-warm sensuality wrapped in velvety rose absolute and smoked resins.',
-    features: [
-      'Concentrated 35% pure perfume oils providing extraordinary sillage',
-      'Heavy midnight smoked glass bottle with magnetic gold cap'
-    ],
-    specs: [
-      { label: 'Volume', value: '100ml / 3.4 oz' },
-      { label: 'Longevity', value: '24+ Hours Sillage' }
-    ],
-    colors: [
-      { name: 'Smoked Obsidian Flacon', hex: '#1C1917' }
-    ]
+    campaignVideo: {
+      title: 'Planar Magnetic Diaphragm Physics',
+      subtitle: 'Sub-nanometer conductive traces & symmetric flux field',
+      duration: '01:25'
+    }
   },
+
+  // 6. Kyoto Japanese Titanium Aviator Frames
   {
-    id: 'mont-blanc-obsidian-fountain-pen',
-    sku: 'AU-EYE-010',
-    name: 'Mont-Blanc Obsidian & 18K Nib Fountain Pen',
-    subtitle: 'Deep Precious Resin with Hand-Chased 18K Solid Gold Nib & Piston Filler',
+    id: 'kyoto-titanium-aviator-frames',
+    sku: 'AU-EYE-01',
+    name: 'Kyoto Japanese Titanium Aviator Frames',
+    architecturalTitle: 'KYOTO AVIATOR / JAPANESE BETA-TITANIUM',
+    subtitle: 'Flex-beta titanium wire rims with Barberini ultra-thin mineral glass lenses',
     category: 'Eyewear & Pens',
-    price: 39900,
+    price: 34500,
     originalPrice: 48000,
+    rating: 4.9,
+    reviewCount: 22,
+    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Forged in Sabae, Fukui Prefecture. Seamless featherweight Beta-Titanium wireframe weighing only 16 grams. Barberini mineral crystal polarized lenses with 10-layer anti-reflective emerald coating.',
+    badge: 'Numbered Run',
+    inStock: true,
+    edition: 'Edition of 25',
+    editionLabel: 'Edition of 25',
+    editionNumber: 25,
+    claimed: 19,
+    remaining: 6,
+    accentColor: '#2E6B56', // Emerald Forest
+    accentName: 'Emerald Forest',
+    materials: ['Japanese Beta-Titanium Wire', 'Barberini Polarized Mineral Glass', 'Solid Titanium Nosepads'],
+    provenance: 'Sabae, Fukui, Japan',
+    features: ['16g Ultra-Light Ergonomics', 'Laser-etched Serial Number on Inner Temple', 'Wooden Presentation Case'],
+    specs: [
+      { label: 'Weight', value: '16.2 grams' },
+      { label: 'Lens Width', value: '58 mm' },
+      { label: 'Bridge', value: '14 mm' },
+      { label: 'UV Protection', value: '100% UV400 + Polarized' }
+    ],
+    colors: [{ name: 'Emerald Forest Tint', hex: '#2E6B56' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 7. Calacatta Marble & Solid Brass Chess Set
+  {
+    id: 'calacatta-marble-brass-chess-set',
+    sku: 'AU-OBJ-01',
+    name: 'Calacatta Marble & Solid Brass Chess Set',
+    architecturalTitle: 'CALACATTA GOLD / MARBLE & SOLID BRASS CHESS',
+    subtitle: 'Hand-carved architectural chessmen from Italian Calacatta Gold and Belgian Nero Marquina',
+    category: 'Collector Objects',
+    price: 78000,
+    originalPrice: 110000,
     rating: 5.0,
-    reviewCount: 34,
+    reviewCount: 18,
+    image: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'A sculpture of strategic geometry. The 18kg board is cut from a seamless slab of Italian Calacatta Gold with brass inlays. Chessmen are precision lathe-turned from solid brass and blackened bronze.',
     badge: 'Collector First Edition',
     inStock: true,
-    featured: true,
-    trending: false,
-    edition: 'Edition of 20',
-    editionNumber: 20,
-    claimed: 18,
-    remaining: 2,
-    materials: ['Deep Obsidian Precious Resin', '18K Two-Tone Solid Gold Nib', 'Platinum Plated Accents'],
-    provenance: 'Hamburg, Germany',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'For treaties, deeds, and personal letters. The 18K hand-tuned nib yields with delicate elasticity under the hand, laying down ink with effortless glide.',
-    features: [
-      'Hand-ground 18K gold nib with iridium tip (available in Fine or Medium)',
-      'Internal brass piston mechanism holding 1.8ml of fountain pen ink',
-      'Screw-on airtight cap preventing nib drying even when stored for months'
-    ],
-    specs: [
-      { label: 'Nib', value: '18K Solid Gold Hand-Chased' },
-      { label: 'Weight', value: '42 grams Balanced Brass Core' }
-    ],
-    colors: [
-      { name: 'Obsidian Black & Gold', hex: '#B89653' }
-    ]
-  },
-  {
-    id: 'barista-pro-solid-brass-espresso-machine',
-    sku: 'AU-OBJ-011',
-    name: 'Barista Pro Solid Brass Lever Espresso Machine',
-    subtitle: 'Direct-Lever Manual Extraction Machine in Hand-Polished CZ121 Brass',
-    category: 'Collector Objects',
-    price: 112000,
-    originalPrice: 130000,
-    rating: 4.9,
-    reviewCount: 15,
-    badge: 'Vault Selection',
-    inStock: true,
-    featured: false,
-    trending: true,
     edition: 'Edition of 15',
+    editionLabel: 'Edition of 15',
     editionNumber: 15,
     claimed: 12,
     remaining: 3,
-    materials: ['Solid CZ121 Forged Brass', 'Walnut Wood Handles', 'Dual Pressure Manometers'],
-    provenance: 'Milan, Italy',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'A sculptural direct-piston lever espresso machine that commands any kitchen or executive boardroom. Delivers velvety, 9-bar artisanal crema through manual lever modulation.',
-    features: [
-      'Solid forged brass boiler with 1.6 liter capacity and thermal PID stabilization',
-      'American walnut hand-carved pull lever and portafilter handles',
-      'Dual pressure gauges monitoring boiler temperature and real-time puck extraction'
-    ],
+    accentColor: '#5C6942', // Tactical Olive
+    accentName: 'Tactical Olive',
+    materials: ['Italian Calacatta Gold Marble', 'Solid Lathe-Turned Brass', 'Weighted Leather Bases'],
+    provenance: 'Carrara, Italy',
+    features: ['18kg Solid Architectural Board', 'Individual Suede Compartment Box', 'Felt-lined Protective Underside'],
     specs: [
-      { label: 'Boiler', value: '1.6L Solid Heavy Brass' },
-      { label: 'Weight', value: '14.5 kg Countertop Anchor' }
+      { label: 'Board Size', value: '45 x 45 x 3.5 cm' },
+      { label: 'King Height', value: '105 mm' },
+      { label: 'Total Weight', value: '18.4 kg' }
     ],
-    colors: [
-      { name: 'Mirrored Brass & Walnut', hex: '#B89653' }
-    ]
-  },
-  {
-    id: 'sculpted-titanium-atelier-speaker',
-    sku: 'AU-AUD-012',
-    name: 'Sculpted Titanium 360° Atelier Speaker',
-    subtitle: 'Radial Sound Diffusion Cone with Champagne Gold Accents & 24H Battery',
-    category: 'Atelier Audio',
-    price: 42000,
-    originalPrice: 50000,
-    rating: 4.8,
-    reviewCount: 30,
-    badge: 'Limited Atelier',
-    inStock: true,
-    featured: false,
-    trending: false,
-    edition: 'Edition of 30',
-    editionNumber: 30,
-    claimed: 25,
-    remaining: 5,
-    materials: ['Solid Billet Titanium Shell', 'Gold PVD Inlays', 'Italian Wool Mesh'],
-    provenance: 'Zurich, Switzerland',
+    colors: [{ name: 'Calacatta White & Solid Brass', hex: '#5C6942' }],
     exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Sculpted from aerospace titanium billet into an acoustic reflector cone that radiates room-filling high-fidelity sound uniformly across 360 degrees.',
-    features: [
-      'Continuous 50W RMS Class-D audiophile internal amplifier',
-      'Dual opposing passive radiators preventing vibration on timber sideboards',
-      'Lossless LDAC & aptX HD Bluetooth with Wi-Fi AirPlay 2 streaming'
-    ],
-    specs: [
-      { label: 'Power', value: '50W RMS Spatial Audio' },
-      { label: 'Battery', value: '24 Hours Playtime' }
-    ],
-    colors: [
-      { name: 'Bead-Blasted Titanium', hex: '#94A3B8' }
-    ]
+    limitedEdition: true
   },
+
+  // 8. Heritage Moonphase Rose-Gold Dress Watch
   {
-    id: 'sovereign-gmt-dual-time-automatic-watch',
-    sku: 'AU-HOR-013',
-    name: 'Sovereign GMT Dual-Time Automatic Watch',
-    subtitle: 'Ceramic 24-Hour Bezel, 72-Hour Power Reserve & Anti-Magnetic Silicon Hairspring',
+    id: 'heritage-moonphase-rose-gold',
+    sku: 'AU-HOR-03',
+    name: 'Heritage Moonphase Rose-Gold Dress Watch',
+    architecturalTitle: 'HERITAGE MOONPHASE / 18K ROSE GOLD CALIBRE',
+    subtitle: 'Astronomical moonphase complication with Grand Feu enamel dial',
     category: 'Horology',
-    price: 94000,
-    originalPrice: 115000,
-    rating: 4.9,
+    price: 118000,
+    originalPrice: 165000,
+    rating: 5.0,
     reviewCount: 27,
-    badge: 'Vault Selection',
+    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Classical watchmaking at its apex. Features an authentic vitreous Grand Feu enamel dial fired at 850°C. The moonphase disc is cut from blue gold with laser-ablated stars and 24K gold foil moon.',
+    badge: 'Private Reserve',
     inStock: true,
-    featured: true,
-    trending: true,
-    edition: 'Edition of 18',
-    editionNumber: 18,
-    claimed: 15,
-    remaining: 3,
-    materials: ['904L Corrosion-Proof Steel', 'Bi-Color Zirconia Ceramic Bezel', 'Oyster-Link Bracelet'],
-    provenance: 'Biel, Switzerland',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'The definitive traveler’s instrument. Track your home timezone and destination simultaneously via the independent jumping local hour hand and 24-hour ceramic bezel.',
-    features: [
-      'True "Flyer" GMT automatic movement with independent jumping hour',
-      'Scratchproof dual-tone ceramic bezel with engraved platinum numerals',
-      '100-meter water resistance with screw-down crown and sapphire glass'
-    ],
-    specs: [
-      { label: 'Movement', value: 'Automatic Calibre AU-GMT (72H Reserve)' },
-      { label: 'Diameter', value: '40.5mm 904L Steel' }
-    ],
-    colors: [
-      { name: 'Obsidian Black & Champagne', hex: '#B89653' }
-    ]
-  },
-  {
-    id: 'milano-leather-watch-trunk',
-    sku: 'AU-LTH-014',
-    name: 'Milano Hand-Burnished Leather Watch Trunk',
-    subtitle: '6-Slot Collector Watch Safe in Hand-Burnished Calfskin with Microfiber Pillows',
-    category: 'Bespoke Leather',
-    price: 31500,
-    originalPrice: 38000,
-    rating: 5.0,
-    reviewCount: 42,
-    badge: 'Limited Atelier',
-    inStock: true,
-    featured: false,
-    trending: true,
-    edition: 'Edition of 30',
-    editionNumber: 30,
-    claimed: 27,
-    remaining: 3,
-    materials: ['Hand-Patinated Italian Calfskin', 'Alcantara Suede Lining', 'Solid Brass Lock'],
-    provenance: 'Milan, Italy',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Guards six of your finest timepieces against dust and magnetics. Fitted with memory foam cushions that accommodate both petite vintage and oversized modern bracelets.',
-    features: [
-      'Solid wooden chassis hand-wrapped in museum-grade burnished leather',
-      'Individual recessed compartments preventing crown-on-case contact',
-      'Solid brass push-button latch lock with serialized key'
-    ],
-    specs: [
-      { label: 'Capacity', value: '6 Timepieces up to 55mm Diameter' },
-      { label: 'Lining', value: 'Anti-Tarnish Alcantara' }
-    ],
-    colors: [
-      { name: 'Vintage Cigar Patina', hex: '#78350F' }
-    ]
-  },
-  {
-    id: 'santal-imperial-artisanal-diffuser-candle',
-    sku: 'AU-PRF-015',
-    name: 'Santal Impérial Artisanal Diffuser & Candle Set',
-    subtitle: 'Solid Travertine Stone Vessels with Mysore Sandalwood & Cardamom Wax',
-    category: 'Haute Parfumerie',
-    price: 19500,
-    originalPrice: 24000,
-    rating: 4.8,
-    reviewCount: 37,
-    badge: 'Numbered Run',
-    inStock: true,
-    featured: false,
-    trending: false,
-    edition: 'Edition of 40',
-    editionNumber: 40,
-    claimed: 34,
-    remaining: 6,
-    materials: ['Solid Natural Travertine Stone', '100% Pure Soy & Beeswax', 'Pure Mysore Sandalwood Oil'],
-    provenance: 'Rome & Grasse',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Carved from monolithic blocks of Italian porous travertine. Scented with sustainably sourced vintage Mysore sandalwood, cedar, and crushed cardamom pods.',
-    features: [
-      'Reusable hand-turned natural travertine vessels that serve as vases after use',
-      '80 Hours clean candle burn time with organic untreated cotton wick',
-      '200ml reeds diffuser with black rattan diffusion wands'
-    ],
-    specs: [
-      { label: 'Candle Weight', value: '450 grams Wax' },
-      { label: 'Diffuser Volume', value: '200ml Essence' }
-    ],
-    colors: [
-      { name: 'Natural Warm Travertine', hex: '#E7E5E4' }
-    ]
-  },
-  {
-    id: 'tortoiseshell-gold-bridge-sunglasses',
-    sku: 'AU-EYE-016',
-    name: 'Tortoiseshell & Gold-Bridge Heritage Sunglasses',
-    subtitle: 'Mazzucchelli 1849 Cellulose Acetate with 24K Gold-Plated Double Bridge',
-    category: 'Eyewear & Pens',
-    price: 29000,
-    originalPrice: 35000,
-    rating: 4.9,
-    reviewCount: 26,
-    badge: 'Vault Selection',
-    inStock: true,
-    featured: false,
-    trending: true,
-    edition: 'Edition of 30',
-    editionNumber: 30,
-    claimed: 27,
-    remaining: 3,
-    materials: ['Italian Mazzucchelli Bio-Acetate', '24K Gold Plated Bridge', 'Mineral Green Polarized Lenses'],
-    provenance: 'Cadore, Italy',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Vintage 1960s Riviera styling modernized with bespoke double bridge architecture. Tumbled in beechwood barrels for 72 hours for an unrivaled high-gloss luster.',
-    features: [
-      'Custom 8mm thick Italian acetate hand-beveled around the perimeter',
-      '5-barrel German rivets pinned completely through the temples',
-      'Bottle-green mineral lenses with 100% UV400 and infrared protection'
-    ],
-    specs: [
-      { label: 'Size', value: '51-21-145 Universal Fit' },
-      { label: 'Lenses', value: 'Mineral Glass Category 3' }
-    ],
-    colors: [
-      { name: 'Havana Tortoiseshell', hex: '#713F12' }
-    ]
-  },
-  {
-    id: 'kinetic-perpetual-brass-desk-orrery',
-    sku: 'AU-OBJ-017',
-    name: 'Kinetic Perpetual Brass Desk Orrery',
-    subtitle: 'Solid Brass Mechanical Solar System with Hand-Turned Semi-Precious Stone Planets',
-    category: 'Collector Objects',
-    price: 56000,
-    originalPrice: 68000,
-    rating: 5.0,
-    reviewCount: 17,
-    badge: 'Collector First Edition',
-    inStock: true,
-    featured: true,
-    trending: false,
-    edition: 'Edition of 15',
-    editionNumber: 15,
-    claimed: 13,
-    remaining: 2,
-    materials: ['Hand-Polished CZ121 Brass Gears', 'Lapis, Jade & Carnelian Planets', 'Granite Base'],
-    provenance: 'Black Forest, Germany',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'An astronomical kinetic sculpture tracking the heliocentric orbits of the planets. Driven by a silent Swiss mechanical escapement requiring winding only once per month.',
-    features: [
-      'Over 60 individual interlocking brass gears providing true proportional orbital speeds',
-      'Planets sculpted from genuine minerals (Lapis Lazuli Earth, Red Carnelian Mars)',
-      'Black Nero Assoluto granite pedestal with laser-engraved zodiac track'
-    ],
-    specs: [
-      { label: 'Height', value: '38cm / 15 inches' },
-      { label: 'Weight', value: '8.2 kilograms' }
-    ],
-    colors: [
-      { name: 'Solid Aged Brass', hex: '#B89653' }
-    ]
-  },
-  {
-    id: 'solid-brass-walnut-mechanical-keyboard',
-    sku: 'AU-AUD-018',
-    name: 'Solid Brass & Walnut 75% Mechanical Keyboard',
-    subtitle: 'Machined from a Single Brass Billet with American Walnut Top Housing',
-    category: 'Atelier Audio',
-    price: 44900,
-    originalPrice: 52000,
-    rating: 4.9,
-    reviewCount: 22,
-    badge: 'Limited Atelier',
-    inStock: true,
-    featured: false,
-    trending: true,
-    edition: 'Edition of 20',
-    editionNumber: 20,
-    claimed: 17,
-    remaining: 3,
-    materials: ['Solid CZ121 Brass Chassis', 'American Black Walnut Wood', 'Hand-Lubed Switches'],
-    provenance: 'London & Kyoto',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Weighing nearly 3 kilograms of pure mechanical resonance. Provides the deep, acoustic "thock" sought by founders and authors writing longform manuscripts.',
-    features: [
-      'Solid 2.85kg brass bottom weight eliminating all typing vibrations',
-      'Leaf-spring gasket mounted custom PCB with per-key gold leaf contacts',
-      'Hand-assembled custom linear switches factory-lubed with Krytox 205g0'
-    ],
-    specs: [
-      { label: 'Weight', value: '2,850 grams' },
-      { label: 'Angle', value: '7.5 Degrees Ergonomic Incline' }
-    ],
-    colors: [
-      { name: 'Walnut & Brass PVD', hex: '#B89653' }
-    ]
-  },
-  {
-    id: 'geneva-guilloche-enamel-pocket-watch',
-    sku: 'AU-HOR-019',
-    name: 'Geneva Guilloché Enamel Pocket Timepiece',
-    subtitle: 'Grand Feu Blue Enamel Dial with Hand-Engraved Hunter Case & Sterling Silver Chain',
-    category: 'Horology',
-    price: 86000,
-    originalPrice: 105000,
-    rating: 5.0,
-    reviewCount: 11,
-    badge: 'Numbered Run',
-    inStock: true,
-    featured: false,
-    trending: false,
     edition: 'Edition of 12',
+    editionLabel: 'Edition of 12',
     editionNumber: 12,
     claimed: 10,
     remaining: 2,
-    materials: ['Grand Feu Enamel', 'Sterling Silver 925 Case', 'Blued Breguet Steel Hands'],
+    accentColor: '#C26D38', // Burnished Amber
+    accentName: 'Burnished Amber',
+    materials: ['18K Rose Gold Casing', 'Grand Feu Vitreous Enamel', 'Mississippi Alligator Strap'],
     provenance: 'Geneva, Switzerland',
-    exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'Fired in kilns at 800°C over five passes to create the deep, luminous cobalt blue Grand Feu enamel dial. Opens via a spring-loaded hunter case with hand-engraved acanthus scrollwork.',
-    features: [
-      'Authentic Grand Feu enamel dial that will never fade or oxidize over centuries',
-      'Manual-wind Swiss pocket caliber with exhibition caseback displaying Côtes de Genève',
-      'Includes solid Sterling Silver 925 Albert chain with vintage T-bar fob'
-    ],
+    features: ['True Astronomical Moonphase Complication', 'Exhibition Caseback with 21K Gold Rotor', '50M Water Resistance'],
     specs: [
-      { label: 'Diameter', value: '48mm Sterling Silver Hunter Case' },
-      { label: 'Chain', value: 'Solid 925 Silver (35cm length)' }
+      { label: 'Calibre', value: 'AU-712 Moonphase Automatic' },
+      { label: 'Diameter', value: '39.5 mm' },
+      { label: 'Thickness', value: '9.8 mm (Ultra Thin)' }
     ],
-    colors: [
-      { name: 'Cobalt Enamel & Silver', hex: '#1E3A8A' }
-    ]
+    colors: [{ name: 'Rose Gold & Amber', hex: '#C26D38' }],
+    exclusiveOnly: true,
+    limitedEdition: true
   },
+
+  // 9. Florence Vegetable-Tanned Leather Briefcase
   {
-    id: 'executive-full-grain-leather-portfolio',
-    sku: 'AU-LTH-020',
-    name: 'Executive Full-Grain Leather Desk Portfolio',
-    subtitle: 'Tuscan Leather Writing Folio with Rhodia Notepad & Magnetic Pen Slot',
+    id: 'florence-vegetable-tanned-briefcase',
+    sku: 'AU-LEA-02',
+    name: 'Florence Vegetable-Tanned Leather Briefcase',
+    architecturalTitle: 'FLORENCE ATTACHÉ / SADDLE-STITCHED COWHIDE',
+    subtitle: 'Structured double-gusset diplomat attaché with solid brass coded clasp',
     category: 'Bespoke Leather',
-    price: 18500,
-    originalPrice: 22000,
+    price: 52000,
+    originalPrice: 72000,
     rating: 4.8,
-    reviewCount: 39,
+    reviewCount: 19,
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Rigid architectural diplomat case with hand-molded leather corners, heavy brass combination dials, and twin accordion chambers lined in British bridle hide.',
+    badge: 'Numbered Run',
+    inStock: true,
+    edition: 'Edition of 25',
+    editionLabel: 'Edition of 25',
+    editionNumber: 25,
+    claimed: 21,
+    remaining: 4,
+    accentColor: '#782C3A', // Imperial Burgundy
+    accentName: 'Imperial Burgundy',
+    materials: ['4mm Bridle Leather', 'Solid English Brass Lock', 'Green Baize Document Sleeve'],
+    provenance: 'Florence, Italy',
+    features: ['Double-Gusset Expanding Capacity', 'Custom Key & Digital Combination Lock'],
+    specs: [
+      { label: 'Dimensions', value: '42 x 31 x 11 cm' },
+      { label: 'Weight', value: '2.1 kg' }
+    ],
+    colors: [{ name: 'Deep Burgundy Wine', hex: '#782C3A' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 10. Ambre Nocturne Private Reserve Scent
+  {
+    id: 'ambre-nocturne-private-reserve',
+    sku: 'AU-PAR-02',
+    name: 'Ambre Nocturne Private Reserve Scent',
+    architecturalTitle: 'AMBRE NOCTURNE / PURE AMBERGRIS RESERVE',
+    subtitle: 'Smoked labdanum, aged benzoin, and vintage ambergris aged 12 years in oak barrels',
+    category: 'Haute Parfumerie',
+    price: 24500,
+    originalPrice: 35000,
+    rating: 5.0,
+    reviewCount: 23,
+    image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'An intoxicating warmth of molten resin, Madagascar vanilla bean, dark Spanish cistus, and rare ambergris matured in French oak cask cellars.',
+    badge: 'Private Reserve',
+    inStock: true,
+    edition: 'Edition of 35',
+    editionLabel: 'Edition of 35',
+    editionNumber: 35,
+    claimed: 30,
+    remaining: 5,
+    accentColor: '#3E82C4', // Cobalt Azure
+    accentName: 'Cobalt Azure',
+    materials: ['Natural Ambergris', 'French Oak Cask Aged Extract', 'Cobalt-Tinted Heavy Crystal'],
+    provenance: 'Grasse, France',
+    features: ['Cask-Conditioned for 24 Months', '32% Extrait Concentration'],
+    specs: [{ label: 'Volume', value: '100 ml' }, { label: 'Longevity', value: '16+ Hours' }],
+    colors: [{ name: 'Cobalt Blue Crystal', hex: '#3E82C4' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 11. Mont-Blanc Obsidian & 18K Nib Fountain Pen
+  {
+    id: 'mont-blanc-obsidian-fountain-pen',
+    sku: 'AU-EYE-02',
+    name: 'Mont-Blanc Obsidian & 18K Nib Fountain Pen',
+    architecturalTitle: 'OBSIDIAN FOUNTAIN PEN / 18K SOLID GOLD NIB',
+    subtitle: 'Machined from single volcanic obsidian core with rhodium-coated 18K hand-ground nib',
+    category: 'Eyewear & Pens',
+    price: 39900,
+    originalPrice: 56000,
+    rating: 5.0,
+    reviewCount: 16,
+    image: 'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Crafted for historic signatures. Turned from natural volcanic glass with guilloché barrel accents and an 18K two-tone solid gold nib hand-adjusted under 20x magnification.',
+    badge: 'Limited Atelier',
+    inStock: true,
+    edition: 'Edition of 20',
+    editionLabel: 'Edition of 20',
+    editionNumber: 20,
+    claimed: 16,
+    remaining: 4,
+    accentColor: '#465669', // Titanium Slate
+    accentName: 'Titanium Slate',
+    materials: ['Solid Natural Obsidian', '18K Bicolor Solid Gold Nib', 'Piston Vacuum Filling System'],
+    provenance: 'Hamburg, Germany',
+    features: ['Individual Nib Tuning Certificate', 'Handmade Crystal Inkwell Included'],
+    specs: [{ label: 'Nib Size', value: 'Medium (M) Hand-Polished' }, { label: 'Weight', value: '54 grams' }],
+    colors: [{ name: 'Obsidian Black', hex: '#465669' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 12. Barista Pro Solid Brass Lever Espresso Machine
+  {
+    id: 'barista-pro-brass-lever-espresso',
+    sku: 'AU-OBJ-02',
+    name: 'Barista Pro Solid Brass Lever Espresso Machine',
+    architecturalTitle: 'BARISTA PRO / SOLID BRASS PISTON LEVER',
+    subtitle: 'Direct manual piston lever extraction with dual copper boilers and walnut toggles',
+    category: 'Collector Objects',
+    price: 112000,
+    originalPrice: 155000,
+    rating: 5.0,
+    reviewCount: 14,
+    image: 'https://images.unsplash.com/photo-1517668808822-9ebb02ae2a0e?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1517668808822-9ebb02ae2a0e?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Hand-assembled in Milan. Mirror-polished solid yellow brass with spring-assisted manual lever producing uncompromised 9-bar artisanal espresso pressure.',
     badge: 'Vault Selection',
     inStock: true,
-    featured: false,
-    trending: true,
-    edition: 'Edition of 40',
-    editionNumber: 40,
-    claimed: 36,
+    edition: 'Edition of 15',
+    editionLabel: 'Edition of 15',
+    editionNumber: 15,
+    claimed: 11,
     remaining: 4,
-    materials: ['Vegetable-Tanned Tuscan Calfskin', 'Microfiber Interior', 'Solid Brass Snap'],
-    provenance: 'Florence, Italy',
+    accentColor: '#C26D38', // Burnished Amber
+    accentName: 'Burnished Amber',
+    materials: ['Mirror-Polished Cast Brass', 'Dual Copper Boilers', 'American Walnut Handles'],
+    provenance: 'Milan, Italy',
+    features: ['Manual Spring Lever Pressure Profiling', 'Dual Commercial PID Temperature Sensors'],
+    specs: [{ label: 'Boiler Capacity', value: '2.8 Litres' }, { label: 'Weight', value: '26.5 kg' }],
+    colors: [{ name: 'Polished Brass & Walnut', hex: '#C26D38' }],
     exclusiveOnly: true,
-    limitedEdition: true,
-    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=85',
-    gallery: [
-      'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=85'
-    ],
-    description: 'The executive companion for signing documents and sketching strategy. Features dedicated slots for iPad Pro or tablet, business cards, and fountain pen.',
-    features: [
-      'Accommodates A4 and Letter size legal pads with integrated side slot',
-      'Hidden magnetic closure that latches with a muted, discrete sound',
-      'Includes fountain-pen-friendly 90gsm French vellum notebook'
-    ],
-    specs: [
-      { label: 'Dimensions', value: '33cm x 24.5cm Closed' },
-      { label: 'Origin', value: 'Florence, Italy' }
-    ],
-    colors: [
-      { name: 'Saddle Tan', hex: '#854D0E' },
-      { name: 'Espresso Black', hex: '#0B0C10' }
-    ]
+    limitedEdition: true
+  },
+
+  // 13. Sculpted Titanium 360° Atelier Speaker
+  {
+    id: 'sculpted-titanium-atelier-speaker',
+    sku: 'AU-AUD-02',
+    name: 'Sculpted Titanium 360° Atelier Speaker',
+    architecturalTitle: 'TITANIUM 360° / HIGH-FIDELITY ATELIER SPEAKER',
+    subtitle: 'Monolithic CNC titanium enclosure with omnidirectional acoustic lens',
+    category: 'Atelier Audio',
+    price: 42000,
+    originalPrice: 58000,
+    rating: 4.8,
+    reviewCount: 20,
+    image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Formed from a monolithic billet of aerospace titanium. Projects a seamless 360-degree soundfield via an acoustic dispersion cone and dual passive radiators.',
+    badge: 'Numbered Run',
+    inStock: true,
+    edition: 'Edition of 30',
+    editionLabel: 'Edition of 30',
+    editionNumber: 30,
+    claimed: 24,
+    remaining: 6,
+    accentColor: '#2E6B56', // Emerald Forest
+    accentName: 'Emerald Forest',
+    materials: ['CNC Aerospace Grade Titanium', 'Beryllium Dome Tweeter', 'Walnut Base'],
+    provenance: 'Copenhagen, Denmark',
+    features: ['Lossless AirPlay 2 & Tidal Connect', '12-Hour Battery + Balanced XLR In'],
+    specs: [{ label: 'Power Output', value: '120 Watts RMS' }, { label: 'Frequency', value: '38Hz – 28kHz' }],
+    colors: [{ name: 'Brushed Titanium Slate', hex: '#2E6B56' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 14. Sovereign GMT Dual-Time Automatic Watch
+  {
+    id: 'sovereign-gmt-dual-time-watch',
+    sku: 'AU-HOR-04',
+    name: 'Sovereign GMT Dual-Time Automatic Watch',
+    architecturalTitle: 'SOVEREIGN GMT / 41MM DUAL-TIME ZONE',
+    subtitle: 'Bidirectional 24-hour ceramic bezel with independent jumping hour hand',
+    category: 'Horology',
+    price: 94000,
+    originalPrice: 130000,
+    rating: 4.9,
+    reviewCount: 31,
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'The international voyager’s essential companion. High-precision automatic GMT caliber with deep azure and obsidian ceramic bezel, tracking two time zones concurrently.',
+    badge: 'Collector First Edition',
+    inStock: true,
+    edition: 'Edition of 18',
+    editionLabel: 'Edition of 18',
+    editionNumber: 18,
+    claimed: 15,
+    remaining: 3,
+    accentColor: '#3E82C4', // Cobalt Azure
+    accentName: 'Cobalt Azure',
+    materials: ['904L Austenitic Steel', 'Bicolor Ceramic Bezel', 'Sapphire Cyclops Crystal'],
+    provenance: 'Geneva, Switzerland',
+    features: ['Independent Jumping Local Hour Hand', '70-Hour Chronometer Reserve'],
+    specs: [{ label: 'Calibre', value: 'AU-GMT 3186' }, { label: 'Diameter', value: '41.0 mm' }],
+    colors: [{ name: 'Azure & Obsidian', hex: '#3E82C4' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 15. Milano Suede-Lined 6-Slot Watch Vault
+  {
+    id: 'milano-suede-watch-vault',
+    sku: 'AU-LEA-03',
+    name: 'Milano Suede-Lined 6-Slot Watch Vault',
+    architecturalTitle: 'MILANO VAULT / 6-SLOT HOROLOGICAL CASE',
+    subtitle: 'Florentine leather shell with cushioned Alcantara pillows and biometric lock',
+    category: 'Bespoke Leather',
+    price: 31500,
+    originalPrice: 45000,
+    rating: 4.9,
+    reviewCount: 25,
+    image: 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Engineered to safeguard fine horology during international travel. Holds 6 full-sized timepieces on individual ergonomic cushions separated by rigid partition walls.',
+    badge: 'Numbered Run',
+    inStock: true,
+    edition: 'Edition of 30',
+    editionLabel: 'Edition of 30',
+    editionNumber: 30,
+    claimed: 26,
+    remaining: 4,
+    accentColor: '#5C6942', // Tactical Olive
+    accentName: 'Tactical Olive',
+    materials: ['Full-Grain Calfskin', 'Italian Alcantara Velvet', 'Solid Brass Keyed Latch'],
+    provenance: 'Milan, Italy',
+    features: ['Individual Removable Cushions', 'Reinforced Rigid Shell Structure'],
+    specs: [{ label: 'Capacity', value: '6 Timepieces up to 48mm' }, { label: 'Dimensions', value: '34 x 22 x 9 cm' }],
+    colors: [{ name: 'Olive Green & Alcantara', hex: '#5C6942' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 16. Santal Impérial Travertine Diffuser Set
+  {
+    id: 'santal-imperial-travertine-diffuser',
+    sku: 'AU-PAR-03',
+    name: 'Santal Impérial Travertine Diffuser Set',
+    architecturalTitle: 'SANTAL IMPÉRIAL / ROMAN TRAVERTINE DIFFUSER',
+    subtitle: 'Monolithic Roman travertine vessel with cold-pressed Mysore sandalwood essence',
+    category: 'Haute Parfumerie',
+    price: 19500,
+    originalPrice: 28000,
+    rating: 4.8,
+    reviewCount: 18,
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Quarried from Tivoli, Rome. The porous natural travertine stone vessel passively diffuses pure sandalwood, dried fig leaf, and cedar resin throughout private quarters.',
+    badge: 'Limited Atelier',
+    inStock: true,
+    edition: 'Edition of 40',
+    editionLabel: 'Edition of 40',
+    editionNumber: 40,
+    claimed: 34,
+    remaining: 6,
+    accentColor: '#C26D38', // Burnished Amber
+    accentName: 'Burnished Amber',
+    materials: ['Honed Roman Travertine Stone', 'Cold-Pressed Botanical Essences'],
+    provenance: 'Tivoli, Italy',
+    features: ['Includes 250ml Oil Refill Vessel', 'Solid Brass Dropper Included'],
+    specs: [{ label: 'Vessel Weight', value: '2.8 kg' }, { label: 'Diffusion Span', value: '6 Months Continuous' }],
+    colors: [{ name: 'Warm Travertine Amber', hex: '#C26D38' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 17. Heritage Mazzucchelli Acetate Sunglasses
+  {
+    id: 'heritage-mazzucchelli-sunglasses',
+    sku: 'AU-EYE-03',
+    name: 'Heritage Mazzucchelli Acetate Sunglasses',
+    architecturalTitle: 'MAZZUCCHELLI / 10MM SCULPTED ACETATE',
+    subtitle: 'Thick 10mm Japanese-Italian cured acetate with 7-barrel custom hinges',
+    category: 'Eyewear & Pens',
+    price: 29000,
+    originalPrice: 42000,
+    rating: 4.9,
+    reviewCount: 21,
+    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Cured for 6 months to prevent warpage. 10mm architectural acetate sculpted with custom bevels and riveted 7-barrel hinges for supreme stability.',
+    badge: 'Numbered Run',
+    inStock: true,
+    edition: 'Edition of 30',
+    editionLabel: 'Edition of 30',
+    editionNumber: 30,
+    claimed: 25,
+    remaining: 5,
+    accentColor: '#782C3A', // Imperial Burgundy
+    accentName: 'Imperial Burgundy',
+    materials: ['Mazzucchelli 1849 Cured Acetate', 'Rivet-Pinned 7-Barrel Hinges', 'Dark Wine Tinted Lenses'],
+    provenance: 'Varese, Italy',
+    features: ['Includes Hand-Stitched Leather Case', 'Serialized Laser Marking'],
+    specs: [{ label: 'Front Width', value: '148 mm' }, { label: 'Lens Height', value: '46 mm' }],
+    colors: [{ name: 'Deep Tortoise & Burgundy', hex: '#782C3A' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 18. Kinetic Perpetual Brass Desk Orrery
+  {
+    id: 'kinetic-perpetual-brass-orrery',
+    sku: 'AU-OBJ-03',
+    name: 'Kinetic Perpetual Brass Desk Orrery',
+    architecturalTitle: 'ORRERY KINETIC / SOLID BRASS PLANETARY MODEL',
+    subtitle: 'Clockwork-driven solar system model with hand-turned lapis lazuli and brass gears',
+    category: 'Collector Objects',
+    price: 56000,
+    originalPrice: 79000,
+    rating: 5.0,
+    reviewCount: 16,
+    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Demonstrates the orbital periods of Mercury, Venus, Earth, and Mars via 42 hand-cut brass gears powered by a precision silent spring escapement.',
+    badge: 'Collector First Edition',
+    inStock: true,
+    edition: 'Edition of 15',
+    editionLabel: 'Edition of 15',
+    editionNumber: 15,
+    claimed: 12,
+    remaining: 3,
+    accentColor: '#465669', // Titanium Slate
+    accentName: 'Titanium Slate',
+    materials: ['42 Hand-Cut Solid Brass Gears', 'Lapis Lazuli Earth Globe', 'Solid Granite Base'],
+    provenance: 'Oxford, United Kingdom',
+    features: ['Accurate Heliocentric Planetary Gear Ratios', 'Hand-Blown Glass Cloche Included'],
+    specs: [{ label: 'Height', value: '38 cm' }, { label: 'Weight', value: '6.4 kg' }],
+    colors: [{ name: 'Brass & Slate Granite', hex: '#465669' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 19. Solid Brass & Walnut 75% Mechanical Keyboard
+  {
+    id: 'brass-walnut-mechanical-keyboard',
+    sku: 'AU-AUD-03',
+    name: 'Solid Brass & Walnut 75% Mechanical Keyboard',
+    architecturalTitle: 'ATELIER KEYBOARD / 75% SOLID BRASS & WALNUT',
+    subtitle: 'Gasket-mounted acoustic dampening with hand-lubricated mechanical switches',
+    category: 'Atelier Audio',
+    price: 44900,
+    originalPrice: 62000,
+    rating: 4.9,
+    reviewCount: 28,
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'A tactile and acoustic masterpiece. Features a CNC-machined 2.2kg solid brass bottom weight, North American black walnut case, and poron gasket dampening tuned for deep, resonant keypress acoustics.',
+    badge: 'Private Reserve',
+    inStock: true,
+    edition: 'Edition of 20',
+    editionLabel: 'Edition of 20',
+    editionNumber: 20,
+    claimed: 17,
+    remaining: 3,
+    accentColor: '#2E6B56', // Emerald Forest
+    accentName: 'Emerald Forest',
+    materials: ['Solid Black Walnut Wood', '2.2kg Polished Brass Weight Plate', 'FR4 Acoustic PCB'],
+    provenance: 'Kyoto, Japan',
+    features: ['Hot-Swappable 5-Pin Switch Sockets', 'Custom Braided Coiled Aviator Cable'],
+    specs: [{ label: 'Layout', value: '75% Compact (84 Keys)' }, { label: 'Weight', value: '3.1 kg' }],
+    colors: [{ name: 'Walnut & Polished Brass', hex: '#2E6B56' }],
+    exclusiveOnly: true,
+    limitedEdition: true
+  },
+
+  // 20. Executive Tuscan Leather Desk Portfolio
+  {
+    id: 'executive-tuscan-desk-portfolio',
+    sku: 'AU-LEA-04',
+    name: 'Executive Tuscan Leather Desk Portfolio',
+    architecturalTitle: 'TUSCAN PORTFOLIO / EXECUTIVE A4 DESK FOLDER',
+    subtitle: 'Vachetta leather writing portfolio with solid brass pen loop and archival notepad',
+    category: 'Bespoke Leather',
+    price: 18500,
+    originalPrice: 26000,
+    rating: 4.8,
+    reviewCount: 33,
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200&auto=format&fit=crop'],
+    description:
+      'Crafted from supple Tuscan vegetable-tanned leather. Holds standard A4 or legal writing pads, executive business cards, and has an integrated solid brass loop for your fountain pen.',
+    badge: 'Numbered Run',
+    inStock: true,
+    edition: 'Edition of 40',
+    editionLabel: 'Edition of 40',
+    editionNumber: 40,
+    claimed: 35,
+    remaining: 5,
+    accentColor: '#3E82C4', // Cobalt Azure
+    accentName: 'Cobalt Azure',
+    materials: ['Full-Grain Italian Vachetta', 'French Linen Stitching', 'Brass Hardware'],
+    provenance: 'Florence, Italy',
+    features: ['Includes 100gsm Fountain-Pen-Friendly Archival Notepad', 'Blind-Embossed Atelier Seal'],
+    specs: [{ label: 'Dimensions', value: '32 x 24 cm (Closed)' }, { label: 'Fits', value: 'A4 & US Letter' }],
+    colors: [{ name: 'Classic Cognac Azure', hex: '#3E82C4' }],
+    exclusiveOnly: true,
+    limitedEdition: true
   }
 ];
 
 export const SAMPLE_COLLECTOR_REVIEWS = [
   {
-    id: 'au-rev-1',
+    author: 'Countess Eleonora di Valmarana',
+    title: 'Private Horology Collector',
+    location: 'Venice, Italy',
+    comment:
+      'The Submersible Carbotech was hand-delivered to our private palazzo within 48 hours under armored escort. The carbon fiber matrix and night luminescence are peerless. The authenticity certificate is recorded on a private titanium plate.',
+    rating: 5,
+    verifiedCollector: true,
+    date: '14 November 2026'
+  },
+  {
     author: 'Vikramaditya S. Singhania',
-    role: 'Managing Partner, Singhania Capital',
+    title: 'Founding Partner, Singhania Capital',
+    location: 'Jaipur, India',
+    comment:
+      'Knowing that Maison Aurelia pieces are strictly unavailable on Amazon, Flipkart, or any marketplace makes this a genuine collector’s privilege. The live GPS tracking of the Maybach delivery unit in Jaipur was seamless.',
     rating: 5,
-    date: '3 days ago',
-    comment: 'The Tourbillon Skeleton Chronometer arrived in the Mercedes-Maybach armored handover in Jaipur within 35 minutes of order confirmation. The Grand Feu finish and mechanical resonance are museum quality.',
-    verified: true
+    verifiedCollector: true,
+    date: '02 November 2026'
   },
   {
-    id: 'au-rev-2',
-    author: 'Lady Katherine Sterling',
-    role: 'Private Collector & Patron',
+    author: 'Lord Julian Sterling',
+    title: 'Architectural Historian',
+    location: 'St. James’s, London',
+    comment:
+      'The Calacatta Marble Chess Set and Tuscan Weekender Trunk represent the highest tier of European atelier work. No mass production, no discount compromises. Simply timeless execution.',
     rating: 5,
-    date: '1 week ago',
-    comment: 'Finally, a maison that upholds true exclusivity. Knowing my creation is serialized and never listed on retail apps gives authentic collector value.',
-    verified: true
-  },
-  {
-    id: 'au-rev-3',
-    author: 'Devendra Nath Rao',
-    role: 'Chief Architect, Studio Rao',
-    rating: 5,
-    date: '2 weeks ago',
-    comment: 'The Calacatta Marble chess set and Tuscan weekender bag are generational heirlooms. White-glove concierge delivery was flawless.',
-    verified: true
+    verifiedCollector: true,
+    date: '28 October 2026'
   }
 ];

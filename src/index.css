@@ -11,14 +11,14 @@
   
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: #0B0C10;
-    background-color: #FAFAFA;
+    color: #FFFFFF;
+    background-color: #0B0C0E;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #B89653;
-    color: #FFFFFF;
+    background-color: #C6A45E;
+    color: #0B0C0E;
   }
 }
 
@@ -29,16 +29,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F2EFEB;
+  background: #08090B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D9C39B;
+  background: #252830;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B89653;
+  background: #C6A45E;
 }
 
 /* Subtle float animation */

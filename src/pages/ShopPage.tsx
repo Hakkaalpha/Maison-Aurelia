@@ -76,15 +76,15 @@ export const ShopPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#FAFAFA] min-h-screen py-10 font-ui">
+    <div className="w-full bg-[#0B0C0E] text-white min-h-screen py-10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Exclusivity Seal Banner */}
-        <div className="mb-6 rounded-lg bg-aurelia-obsidian border border-aurelia-gold/30 px-4 py-2 flex items-center justify-between text-xs text-stone-300">
+        <div className="mb-6 rounded-2xl bg-[#14161A] border border-[#C6A45E]/40 px-4 py-2.5 flex items-center justify-between text-xs text-stone-300 shadow-xl">
           <div className="flex items-center gap-2">
-            <Lock className="w-3.5 h-3.5 text-aurelia-gold" />
-            <span className="font-semibold uppercase tracking-wider text-[11px] text-aurelia-gold">
-              EXCLUSIVE TO AURELIAPRIVE.COM • NEVER LISTED ON THIRD-PARTY APPS
+            <Lock className="w-3.5 h-3.5 text-[#C6A45E]" />
+            <span className="font-mono uppercase tracking-widest text-[11px] font-bold text-[#C6A45E]">
+              STRICTLY SOLD ONLY ON AURELIAPRIVE.COM • NEVER AVAILABLE ON ANY OTHER APP
             </span>
           </div>
           <span className="hidden sm:inline text-stone-400 text-[10px] uppercase tracking-widest font-mono">
@@ -94,28 +94,28 @@ export const ShopPage: React.FC = () => {
 
         {/* Breadcrumb & Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-2 text-xs font-semibold text-stone-400 mb-2">
-            <Link to="/" className="hover:text-aurelia-gold transition-colors">Atelier Home</Link>
+          <div className="flex items-center gap-2 text-xs font-mono font-semibold text-stone-400 mb-2">
+            <Link to="/" className="hover:text-[#C6A45E] transition-colors">Atelier Home</Link>
             <span>/</span>
-            <span className="text-aurelia-obsidian font-bold">Private Catalog</span>
+            <span className="text-white font-bold">Private Catalog</span>
             {selectedCategory !== 'All' && (
               <>
                 <span>/</span>
-                <span className="text-aurelia-gold font-bold">{selectedCategory}</span>
+                <span className="text-[#C6A45E] font-bold">{selectedCategory}</span>
               </>
             )}
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <h1 className="font-serif font-bold text-3xl sm:text-5xl text-aurelia-obsidian tracking-tight">
+              <h1 className="font-condensed font-black text-3xl sm:text-5xl text-white uppercase tracking-tight">
                 {onlyWishlist
                   ? 'Your Private Wishlist'
                   : selectedCategory !== 'All'
                   ? selectedCategory
                   : 'All Atelier Creations'}
               </h1>
-              <p className="text-xs sm:text-sm text-stone-500 mt-1">
+              <p className="text-xs sm:text-sm text-stone-400 mt-1 font-mono">
                 Showing {filteredProducts.length} of {PRODUCTS.length} limited serialized collector pieces
               </p>
             </div>
@@ -124,24 +124,24 @@ export const ShopPage: React.FC = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-                className="lg:hidden flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white border border-aurelia-border text-xs font-bold text-aurelia-obsidian shadow-sm"
+                className="lg:hidden flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#14161A] border border-white/20 text-xs font-bold text-white shadow-sm"
               >
-                <SlidersHorizontal className="w-4 h-4 text-aurelia-gold" />
+                <SlidersHorizontal className="w-4 h-4 text-[#C6A45E]" />
                 <span>Filters</span>
               </button>
 
-              <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-aurelia-border shadow-sm text-xs font-semibold">
+              <div className="flex items-center gap-2 bg-[#14161A] px-3.5 py-2.5 rounded-xl border border-white/15 shadow-sm text-xs font-mono">
                 <ArrowUpDown className="w-3.5 h-3.5 text-stone-400" />
-                <span className="text-stone-500">Sort:</span>
+                <span className="text-stone-400">Sort:</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="bg-transparent font-bold text-aurelia-obsidian focus:outline-none cursor-pointer"
+                  className="bg-transparent font-bold text-white focus:outline-none cursor-pointer"
                 >
-                  <option value="featured">Vault Curated</option>
-                  <option value="rarity">Rarity (Smallest Edition First)</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
+                  <option value="featured" className="bg-[#14161A]">Vault Curated</option>
+                  <option value="rarity" className="bg-[#14161A]">Rarity (Smallest Edition)</option>
+                  <option value="price-low" className="bg-[#14161A]">Price: Low to High</option>
+                  <option value="price-high" className="bg-[#14161A]">Price: High to Low</option>
                 </select>
               </div>
             </div>
@@ -153,18 +153,18 @@ export const ShopPage: React.FC = () => {
           
           {/* Filter Sidebar */}
           <aside
-            className={`lg:block bg-white rounded-xl border border-aurelia-border shadow-luxury p-6 space-y-6 ${
+            className={`lg:block bg-[#14161A] rounded-2xl border border-white/10 shadow-2xl p-6 space-y-6 ${
               isMobileFilterOpen ? 'block fixed inset-4 z-50 overflow-y-auto lg:relative lg:inset-auto' : 'hidden'
             }`}
           >
-            <div className="flex items-center justify-between pb-4 border-b border-aurelia-borderSubtle">
-              <div className="flex items-center gap-2 font-serif font-bold text-base text-aurelia-obsidian">
-                <Filter className="w-4 h-4 text-aurelia-gold" />
+            <div className="flex items-center justify-between pb-4 border-b border-white/10">
+              <div className="flex items-center gap-2 font-condensed font-bold text-base text-white uppercase tracking-wider">
+                <Filter className="w-4 h-4 text-[#C6A45E]" />
                 <span>Atelier Filter</span>
               </div>
               <button
                 onClick={resetFilters}
-                className="text-xs uppercase tracking-wider font-bold text-aurelia-gold hover:text-aurelia-goldDark"
+                className="text-xs uppercase tracking-wider font-mono font-bold text-[#C6A45E] hover:underline"
               >
                 Reset
               </button>
@@ -172,7 +172,7 @@ export const ShopPage: React.FC = () => {
 
             {/* Keyword Search */}
             <div>
-              <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-mono font-bold text-stone-300 uppercase tracking-wider mb-2">
                 Search Creations
               </label>
               <div className="relative">
@@ -181,7 +181,7 @@ export const ShopPage: React.FC = () => {
                   placeholder="Tourbillon, calfskin, marble..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-8 pr-3 py-2 rounded-lg bg-aurelia-alabaster border border-aurelia-border text-xs focus:outline-none focus:border-aurelia-gold"
+                  className="w-full pl-8 pr-3 py-2 rounded-xl bg-white/5 border border-white/15 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-[#C6A45E]"
                 />
                 <Search className="w-3.5 h-3.5 text-stone-400 absolute left-2.5 top-2.5" />
               </div>
@@ -189,16 +189,16 @@ export const ShopPage: React.FC = () => {
 
             {/* Categories */}
             <div>
-              <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-mono font-bold text-stone-300 uppercase tracking-wider mb-2">
                 Discipline
               </label>
               <div className="space-y-1">
                 <button
                   onClick={() => setSelectedCategory('All')}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between transition-colors ${
+                  className={`w-full text-left px-3 py-2 rounded-xl text-xs font-mono font-semibold flex items-center justify-between transition-colors ${
                     selectedCategory === 'All'
-                      ? 'bg-aurelia-goldLight text-aurelia-goldDark font-bold border border-aurelia-goldBorder'
-                      : 'text-stone-600 hover:bg-aurelia-alabaster'
+                      ? 'bg-white/15 text-white font-bold border border-[#C6A45E]/40'
+                      : 'text-stone-400 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   <span>All 20 Pieces</span>
@@ -209,14 +209,14 @@ export const ShopPage: React.FC = () => {
                   <button
                     key={cat.name}
                     onClick={() => setSelectedCategory(cat.name)}
-                    className={`w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between transition-colors ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-mono font-semibold flex items-center justify-between transition-colors ${
                       selectedCategory === cat.name
-                        ? 'bg-aurelia-goldLight text-aurelia-goldDark font-bold border border-aurelia-goldBorder'
-                        : 'text-stone-600 hover:bg-aurelia-alabaster'
+                        ? 'bg-white/15 text-white font-bold border border-[#C6A45E]/40'
+                        : 'text-stone-400 hover:bg-white/5 hover:text-white'
                     }`}
                   >
                     <span>{cat.name}</span>
-                    <span className="text-[10px] text-stone-400 font-mono">{cat.count}</span>
+                    <span className="text-[10px] text-stone-400 font-mono">{cat.itemCount}</span>
                   </button>
                 ))}
               </div>
@@ -225,10 +225,10 @@ export const ShopPage: React.FC = () => {
             {/* Price Max Slider */}
             <div>
               <div className="flex justify-between items-center mb-2">
-                <label className="text-xs font-bold text-stone-700 uppercase tracking-wider">
+                <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider">
                   Allocation Cap
                 </label>
-                <span className="text-xs font-serif font-bold text-aurelia-obsidian">
+                <span className="text-xs font-condensed font-bold text-white">
                   ₹{priceMax.toLocaleString('en-IN')}
                 </span>
               </div>
@@ -239,7 +239,7 @@ export const ShopPage: React.FC = () => {
                 step="5000"
                 value={priceMax}
                 onChange={(e) => setPriceMax(Number(e.target.value))}
-                className="w-full accent-aurelia-gold cursor-pointer"
+                className="w-full accent-[#C6A45E] cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-stone-400 font-medium mt-1 font-mono">
                 <span>₹18k</span>

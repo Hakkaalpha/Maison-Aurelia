@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Heart, ArrowUpRight, Lock, Sparkles } from 'lucide-react';
+import { ShoppingBag, Heart, ArrowRight, Lock } from 'lucide-react';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
 import { FALLBACK_IMAGE } from '../data/products';
@@ -26,27 +26,35 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     toggleWishlist(product.id);
   };
 
-  const claimedPercent = Math.round((product.claimed / product.editionNumber) * 100);
-
   return (
-    <div className="group relative bg-white rounded-xl border border-aurelia-border shadow-luxury hover:shadow-luxury-hover transition-all duration-300 flex flex-col overflow-hidden font-ui">
+    <div className="group relative bg-[#14161A] text-white rounded-2xl border border-white/10 hover:border-white/25 shadow-2xl transition-all duration-300 flex flex-col overflow-hidden select-none hover:-translate-y-1">
       
-      {/* 100% Website-Exclusive Header Seal on Card */}
-      <div className="bg-aurelia-obsidian text-aurelia-gold px-3 py-1 text-[9px] uppercase tracking-widest font-bold flex items-center justify-between border-b border-aurelia-gold/30">
-        <span className="flex items-center gap-1">
-          <Lock className="w-2.5 h-2.5 text-aurelia-gold" />
-          <span>EXCLUSIVE TO AURELIAPRIVE.COM</span>
+      {/* 1. Exclusivity Seal Top Bar */}
+      <div className="bg-[#0B0C0E] text-[#C6A45E] px-3.5 py-1.5 text-[9px] uppercase tracking-widest font-mono font-bold flex items-center justify-between border-b border-white/5">
+        <span className="flex items-center gap-1.5">
+          <Lock className="w-2.5 h-2.5" />
+          <span>AURELIAPRIVE.COM EXCLUSIVE</span>
         </span>
-        <span className="text-stone-400">NO APPS</span>
+        <span className="text-stone-400">SERIALIZED</span>
       </div>
 
-      {/* Product Image Stage */}
-      <div className="relative aspect-square w-full bg-aurelia-alabaster overflow-hidden p-6 flex items-center justify-center border-b border-aurelia-borderSubtle">
+      {/* 2. Studio Image Stage */}
+      <div className="relative aspect-square w-full bg-[#0E1014] overflow-hidden p-6 flex items-center justify-center border-b border-white/5">
         
+        {/* Subtle Ambient Accent Glow */}
+        <div
+          className="absolute w-36 h-36 rounded-full blur-2xl opacity-15 pointer-events-none transition-opacity group-hover:opacity-30"
+          style={{ backgroundColor: product.accentColor }}
+        />
+
         {/* Serialized Edition Badge */}
-        <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5">
-          <span className="text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-1 rounded bg-white/95 backdrop-blur-sm text-aurelia-obsidian border border-aurelia-border shadow-sm">
-            {product.edition}
+        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
+          <span
+            className="w-2 h-2 rounded-full"
+            style={{ backgroundColor: product.accentColor }}
+          />
+          <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-white/10 text-stone-200 border border-white/10 backdrop-blur-md">
+            {product.editionLabel}
           </span>
         </div>
 
@@ -55,105 +63,89 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           onClick={handleWishlistToggle}
           className={`absolute top-3 right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all ${
             isWishlisted
-              ? 'bg-rose-50 text-rose-600 shadow-sm'
-              : 'bg-white/80 backdrop-blur-sm text-stone-400 hover:text-rose-500 hover:bg-white shadow-sm'
+              ? 'bg-rose-500/20 text-rose-400 border border-rose-500/40'
+              : 'bg-white/5 hover:bg-white/15 text-stone-400 hover:text-white border border-white/10'
           }`}
-          aria-label="Private Wishlist"
+          aria-label="Wishlist"
         >
-          <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-rose-500' : ''}`} />
+          <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-rose-400' : ''}`} />
         </button>
 
-        {/* Product Photo */}
-        <Link to={`/product/${product.id}`} className="w-full h-full flex items-center justify-center">
+        {/* Product Photo Link */}
+        <Link
+          to={`/product/${product.id}`}
+          className="w-full h-full flex items-center justify-center cursor-pointer"
+        >
           <img
             src={product.image}
             alt={product.name}
             onError={(e) => {
               (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
             }}
-            className="w-full h-full object-contain group-hover:scale-106 transition-transform duration-500 ease-out"
+            className="max-h-full max-w-full object-contain filter drop-shadow-[0_15px_20px_rgba(0,0,0,0.6)] group-hover:scale-108 transition-transform duration-500 ease-out"
           />
         </Link>
       </div>
 
-      {/* Card Content */}
-      <div className="p-5 flex-1 flex flex-col justify-between">
+      {/* 3. Card Content */}
+      <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div>
-          {/* Category & Allocation Counter */}
+          {/* Category & Scarcity Tag */}
           <div className="flex items-center justify-between gap-2 mb-2">
-            <span className="text-[10px] uppercase tracking-widest font-extrabold text-aurelia-gold">
+            <span className="text-[10px] uppercase font-mono tracking-widest font-bold text-[#C6A45E]">
               {product.category}
             </span>
-            <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-              Only {product.remaining} of {product.editionNumber} Remaining
+            <span className="text-[10px] font-mono text-stone-400">
+              Only {product.remaining} Left
             </span>
           </div>
 
-          {/* Title */}
-          <Link to={`/product/${product.id}`} className="block group-hover:text-aurelia-goldDark transition-colors">
-            <h3 className="font-serif font-bold text-aurelia-obsidian text-base sm:text-lg line-clamp-1 mb-1 leading-snug">
-              {product.name}
+          {/* Architectural Title */}
+          <Link to={`/product/${product.id}`} className="block">
+            <h3 className="font-condensed font-bold text-white text-lg line-clamp-1 uppercase tracking-tight group-hover:text-[#C6A45E] transition-colors">
+              {product.architecturalTitle || product.name}
             </h3>
           </Link>
 
-          {/* Subtitle / Key Materials */}
-          <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed mb-3">
-            {product.subtitle}
+          {/* Subtitle / Metallurgy Specs */}
+          <p className="text-xs text-stone-400 line-clamp-2 leading-relaxed mt-1 font-sans">
+            {product.subtitle || product.materials[0]}
           </p>
-
-          {/* Provenance Tag */}
-          <div className="flex items-center gap-1.5 text-[10px] text-stone-400 mb-3">
-            <Sparkles className="w-3 h-3 text-aurelia-gold" />
-            <span>Atelier Origin: {product.provenance}</span>
-          </div>
-
-          {/* Allocation Progress Bar */}
-          <div className="mb-4">
-            <div className="w-full h-1 bg-stone-100 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-aurelia-gold to-amber-700 rounded-full"
-                style={{ width: `${claimedPercent}%` }}
-              />
-            </div>
-          </div>
         </div>
 
-        {/* Pricing and Action */}
-        <div className="pt-3 border-t border-aurelia-borderSubtle flex items-center justify-between">
+        {/* 4. Price & Action Buttons */}
+        <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
           <div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-serif font-bold text-aurelia-obsidian text-lg">
-                ₹{product.price.toLocaleString('en-IN')}
-              </span>
-              {product.originalPrice > product.price && (
-                <span className="text-xs text-stone-400 line-through">
-                  ₹{product.originalPrice.toLocaleString('en-IN')}
-                </span>
-              )}
-            </div>
-            <span className="text-[9px] font-bold text-stone-400 uppercase tracking-widest block">
-              Direct-to-Collector Handover
+            <span className="font-condensed font-bold text-xl text-white">
+              ₹{product.price.toLocaleString('en-IN')}
+            </span>
+            <span className="block text-[9px] font-mono text-stone-400 uppercase">
+              ARMORED HANDOVER
             </span>
           </div>
 
           <div className="flex items-center gap-1.5">
             <button
               onClick={handleQuickAdd}
-              className="w-9 h-9 rounded bg-aurelia-obsidian hover:bg-black text-aurelia-gold flex items-center justify-center transition-all shadow-sm"
+              className="p-2.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-stone-300 hover:text-white transition-colors"
               title="Add to Private Bag"
             >
               <ShoppingBag className="w-4 h-4" />
             </button>
+
             <button
               onClick={() => navigate(`/product/${product.id}`)}
-              className="w-9 h-9 rounded bg-aurelia-alabaster hover:bg-stone-200 text-stone-700 flex items-center justify-center transition-colors"
-              title="Inspect Creation"
+              className="px-3.5 py-2 rounded-xl bg-white hover:bg-[#C6A45E] text-[#0B0C0E] hover:text-black font-condensed font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1"
             >
-              <ArrowUpRight className="w-4 h-4" />
+              <span>INSPECT</span>
+              <ArrowRight className="w-3 h-3" />
             </button>
           </div>
         </div>
       </div>
+
     </div>
   );
 };
+
+export default ProductCard;

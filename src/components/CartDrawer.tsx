@@ -57,9 +57,9 @@ export const CartDrawer: React.FC = () => {
               </div>
 
               {/* Exclusivity Notice Strip */}
-              <div className="px-5 py-2.5 bg-aurelia-goldLight border-b border-aurelia-goldBorder/60 flex items-center gap-2 text-[10px] text-aurelia-goldDark font-semibold uppercase tracking-wider">
-                <Lock className="w-3.5 h-3.5 text-aurelia-gold" />
-                <span>EXCLUSIVE TO AURELIAPRIVE.COM • NUMBERED PIECES HELD FOR 30 MINS</span>
+              <div className="px-5 py-2.5 bg-[#0B0C0E] border-b border-white/10 flex items-center gap-2 text-[10px] text-[#C6A45E] font-mono font-bold uppercase tracking-wider">
+                <Lock className="w-3.5 h-3.5 text-[#C6A45E]" />
+                <span>STRICTLY SOLD ONLY ON AURELIAPRIVE.COM • NEVER AVAILABLE ON ANY OTHER APP</span>
               </div>
 
               {/* Items List */}

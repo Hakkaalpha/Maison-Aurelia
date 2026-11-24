@@ -427,7 +427,7 @@ export const TrackingPage: React.FC = () => {
           <div className="flex items-center gap-2 text-xs font-medium tracking-wide">
             <Lock className="w-4 h-4 text-aurelia-gold" />
             <span className="font-bold text-white uppercase tracking-wider text-[11px]">
-              EXCLUSIVE TO AURELIAPRIVE.COM • NEVER SOLD ON ANY OTHER APP OR MARKETPLACE
+              STRICTLY SOLD ONLY ON AURELIAPRIVE.COM • NEVER AVAILABLE ON ANY OTHER APP
             </span>
           </div>
           <div className="flex items-center gap-2 text-[11px] font-mono text-stone-400">
