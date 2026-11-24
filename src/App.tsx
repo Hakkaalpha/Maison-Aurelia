@@ -10,6 +10,7 @@ import { ShopPage } from './pages/ShopPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { OrderSuccessPage } from './pages/OrderSuccessPage';
+import { TrackingPage } from './pages/TrackingPage';
 
 // Scroll restoration helper
 const ScrollToTop = () => {
@@ -40,6 +41,7 @@ const AnimatedRoutes: React.FC = () => {
           <Route path="/category/:categoryName" element={<ShopPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/track" element={<TrackingPage />} />
           <Route path="/order-success" element={<OrderSuccessPage />} />
           {/* Catch-all */}
           <Route path="*" element={<HomePage />} />
@@ -54,7 +56,7 @@ export const App: React.FC = () => {
     <CartProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#F8F9FE] text-slate-900 flex flex-col font-sans selection:bg-indigo-600 selection:text-white">
+        <div className="min-h-screen bg-[#FAFAFA] text-[#0B0C10] flex flex-col font-sans selection:bg-[#B89653] selection:text-white">
           {/* Sticky Navbar with Announcement Bar */}
           <Navbar />
 

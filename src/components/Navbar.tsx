@@ -7,25 +7,25 @@ import {
   Menu,
   X,
   ChevronDown,
+  Navigation,
   Sparkles,
-  Zap,
+  Watch,
+  Briefcase,
+  Glasses,
+  Compass,
   Headphones,
-  Keyboard,
-  Gamepad2,
-  Cpu,
-  Camera,
-  LayoutGrid
+  Lock
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { CATEGORIES, PRODUCTS, FALLBACK_IMAGE } from '../data/products';
+import { MAISON_CATEGORIES, PRODUCTS, FALLBACK_IMAGE } from '../data/products';
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
-  'Audio': <Headphones className="w-4 h-4 text-indigo-600" />,
-  'Keyboards & Mice': <Keyboard className="w-4 h-4 text-indigo-600" />,
-  'Gaming': <Gamepad2 className="w-4 h-4 text-indigo-600" />,
-  'Smart Accessories': <Cpu className="w-4 h-4 text-indigo-600" />,
-  'Webcams & Speakers': <Camera className="w-4 h-4 text-indigo-600" />,
-  'Desk Setup': <LayoutGrid className="w-4 h-4 text-indigo-600" />
+  'Horology': <Watch className="w-4 h-4 text-aurelia-gold" />,
+  'Bespoke Leather': <Briefcase className="w-4 h-4 text-aurelia-gold" />,
+  'Haute Parfumerie': <Sparkles className="w-4 h-4 text-aurelia-gold" />,
+  'Eyewear & Pens': <Glasses className="w-4 h-4 text-aurelia-gold" />,
+  'Collector Objects': <Compass className="w-4 h-4 text-aurelia-gold" />,
+  'Atelier Audio': <Headphones className="w-4 h-4 text-aurelia-gold" />
 };
 
 export const Navbar: React.FC = () => {
@@ -38,14 +38,12 @@ export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Close menus on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsCategoryMenuOpen(false);
     setIsSearchFocused(false);
   }, [location.pathname]);
 
-  // Click outside to close search preview
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
@@ -60,7 +58,7 @@ export const Navbar: React.FC = () => {
     ? PRODUCTS.filter((p) =>
         p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
+        p.materials.some((m) => m.toLowerCase().includes(searchQuery.toLowerCase()))
       ).slice(0, 5)
     : [];
 
@@ -73,66 +71,67 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-soft">
-      {/* 1. Top Announcement Bar */}
-      <div className="w-full bg-[#EDE9FE] text-indigo-950 text-xs py-2 px-4 border-b border-indigo-100 font-medium">
+    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-aurelia-border shadow-luxury">
+      
+      {/* 1. Top Exclusivity Bar */}
+      <div className="w-full bg-aurelia-obsidian text-white py-2 px-4 border-b border-aurelia-gold/20 font-ui text-[11px] tracking-wider">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 mx-auto sm:mx-0">
-            <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px]">
-              ★
-            </span>
-            <span className="font-semibold text-slate-800">
-              Free Shipping on Orders Over ₹999 • Instant Gmail Order Confirmation
+          <div className="flex items-center gap-2.5 mx-auto sm:mx-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-aurelia-gold animate-pulse" />
+            <span className="text-stone-300 uppercase tracking-widest font-semibold text-[10px] sm:text-[11px]">
+              Strictly Available Only on AureliaPrivé.com • Never Listed on Any Other App • Complimentary Armored Doorstep Delivery
             </span>
           </div>
-          <div className="hidden sm:flex items-center gap-4 text-[11px] text-slate-600 font-medium">
-            <span>Fast Dispatch across India</span>
-            <span>•</span>
-            <span className="flex items-center gap-1 text-indigo-700 font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-600" /> Code: KINETIX10 for 10% OFF
+
+          <div className="hidden lg:flex items-center gap-4 text-[10px] text-stone-400 font-medium">
+            <span className="text-aurelia-gold font-bold flex items-center gap-1.5">
+              <Lock className="w-3 h-3 text-aurelia-gold" />
+              100% DIRECT-TO-COLLECTOR
             </span>
+            <span>•</span>
+            <span className="text-stone-300">Member Privilege: <b className="text-white">AURELIA10</b></span>
           </div>
         </div>
       </div>
 
       {/* 2. Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+        <div className="flex items-center justify-between h-20 gap-6">
           
-          {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-black text-xl shadow-button group-hover:scale-105 transition-transform">
-              <Zap className="w-5 h-5 fill-white" />
+          {/* Brand Wordmark & Seal */}
+          <Link to="/" className="flex items-center gap-3.5 flex-shrink-0 group">
+            <div className="w-10 h-10 rounded-sm bg-aurelia-obsidian border border-aurelia-gold/40 flex items-center justify-center text-aurelia-gold font-serif text-xl tracking-tighter shadow-sm group-hover:border-aurelia-gold transition-colors">
+              MA
             </div>
             <div>
-              <span className="font-display font-extrabold text-xl tracking-tight text-slate-900 flex items-center gap-1">
-                Kinetix <span className="text-indigo-600">Tech</span>
+              <span className="font-serif font-bold text-2xl tracking-widest text-aurelia-obsidian block uppercase leading-none">
+                Maison <span className="text-aurelia-gold italic font-normal">Aurelia</span>
               </span>
-              <span className="text-[10px] tracking-wider uppercase text-slate-400 font-bold block -mt-1">
-                Tactile & Desk Gear
+              <span className="text-[9px] tracking-widest-plus uppercase text-aurelia-muted font-bold block mt-1">
+                Private Atelier • Limited Edition Run
               </span>
             </div>
           </Link>
 
-          {/* Desktop Search Bar with Live Suggestions */}
-          <div ref={searchRef} className="hidden md:flex flex-1 max-w-md relative mx-4">
+          {/* Desktop Search */}
+          <div ref={searchRef} className="hidden md:flex flex-1 max-w-sm relative mx-2">
             <form onSubmit={handleSearchSubmit} className="w-full relative">
               <input
                 type="text"
-                placeholder="Search headphones, keyboards, hubs..."
+                placeholder="Search tourbillons, leather, oud..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FE] border border-slate-200 focus:border-indigo-500 focus:bg-white text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 transition-all"
+                className="w-full pl-9 pr-4 py-2 rounded-lg bg-aurelia-alabaster border border-aurelia-border text-xs text-aurelia-obsidian placeholder-stone-400 focus:outline-none focus:border-aurelia-gold focus:bg-white transition-all font-ui"
               />
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+              <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-2.5" />
             </form>
 
-            {/* Live Search Popup Dropdown */}
+            {/* Live Search Popup */}
             {isSearchFocused && searchResults.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-dropdown border border-slate-100 py-2 z-50 overflow-hidden">
-                <div className="px-3 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                  Products ({searchResults.length})
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-luxury-hover border border-aurelia-border py-2 z-50 overflow-hidden">
+                <div className="px-3 py-1.5 text-[10px] font-bold text-aurelia-muted uppercase tracking-wider border-b border-aurelia-borderSubtle">
+                  Numbered Atelier Pieces ({searchResults.length})
                 </div>
                 {searchResults.map((product) => (
                   <Link
@@ -142,7 +141,7 @@ export const Navbar: React.FC = () => {
                       setIsSearchFocused(false);
                       setSearchQuery('');
                     }}
-                    className="flex items-center gap-3 px-3 py-2 hover:bg-indigo-50/60 transition-colors"
+                    className="flex items-center gap-3 px-3 py-2.5 hover:bg-aurelia-goldLight transition-colors"
                   >
                     <img
                       src={product.image}
@@ -150,46 +149,39 @@ export const Navbar: React.FC = () => {
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
                       }}
-                      className="w-10 h-10 rounded-lg object-cover bg-slate-50 border border-slate-100"
+                      className="w-10 h-10 rounded-md object-cover bg-aurelia-alabaster border border-aurelia-border"
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-slate-900 truncate">{product.name}</p>
-                      <p className="text-[11px] text-slate-400 truncate">{product.category}</p>
+                      <p className="text-xs font-semibold text-aurelia-obsidian truncate">{product.name}</p>
+                      <p className="text-[10px] text-aurelia-gold font-bold">{product.edition} • {product.category}</p>
                     </div>
-                    <span className="text-xs font-bold text-indigo-600">
+                    <span className="text-xs font-bold font-serif text-aurelia-obsidian">
                       ₹{product.price.toLocaleString('en-IN')}
                     </span>
                   </Link>
                 ))}
-                <div className="p-2 border-t border-slate-100 mt-1">
-                  <button
-                    onClick={handleSearchSubmit}
-                    className="w-full py-1.5 text-center text-xs font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
-                  >
-                    View all results for "{searchQuery}" →
-                  </button>
-                </div>
               </div>
             )}
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-7">
             <Link
               to="/"
-              className={`text-sm font-semibold transition-colors ${
-                location.pathname === '/' ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'
+              className={`text-xs uppercase tracking-widest font-bold transition-colors ${
+                location.pathname === '/' ? 'text-aurelia-gold border-b-2 border-aurelia-gold pb-1' : 'text-stone-600 hover:text-aurelia-obsidian'
               }`}
             >
               Home
             </Link>
+
             <Link
               to="/shop"
-              className={`text-sm font-semibold transition-colors ${
-                location.pathname === '/shop' ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'
+              className={`text-xs uppercase tracking-widest font-bold transition-colors ${
+                location.pathname === '/shop' ? 'text-aurelia-gold border-b-2 border-aurelia-gold pb-1' : 'text-stone-600 hover:text-aurelia-obsidian'
               }`}
             >
-              Shop
+              All Creations
             </Link>
 
             {/* Categories Dropdown */}
@@ -197,27 +189,30 @@ export const Navbar: React.FC = () => {
               <button
                 onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
                 onMouseEnter={() => setIsCategoryMenuOpen(true)}
-                className="flex items-center gap-1 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors py-2"
+                className="flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-stone-600 hover:text-aurelia-obsidian transition-colors py-2"
               >
-                <span>Categories</span>
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-transform" />
+                <span>Disciplines</span>
+                <ChevronDown className="w-3.5 h-3.5 text-stone-400 group-hover:text-aurelia-gold transition-transform" />
               </button>
 
               {isCategoryMenuOpen && (
-                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-dropdown border border-slate-100 p-2 z-50">
-                  {CATEGORIES.map((cat) => (
+                <div className="absolute top-full left-0 w-80 bg-white rounded-xl shadow-luxury-hover border border-aurelia-border p-3 z-50">
+                  <div className="px-2 py-1 text-[10px] uppercase tracking-widest text-aurelia-gold font-bold border-b border-aurelia-borderSubtle mb-1.5">
+                    Maison Aurelia Categories
+                  </div>
+                  {MAISON_CATEGORIES.map((cat) => (
                     <Link
                       key={cat.name}
                       to={`/category/${encodeURIComponent(cat.name)}`}
-                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F8F9FE] transition-colors"
+                      className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-aurelia-goldLight transition-colors"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-                        {CATEGORY_ICONS[cat.name] || <LayoutGrid className="w-4 h-4 text-indigo-600" />}
+                      <div className="w-8 h-8 rounded bg-aurelia-alabaster border border-aurelia-border flex items-center justify-center">
+                        {CATEGORY_ICONS[cat.name]}
                       </div>
                       <div className="flex-1">
-                        <span className="block text-xs font-bold text-slate-800">{cat.name}</span>
-                        <span className="block text-[11px] text-slate-400 font-medium">
-                          {cat.count} items
+                        <span className="block text-xs font-bold text-aurelia-obsidian">{cat.name}</span>
+                        <span className="block text-[10px] text-stone-400 font-medium">
+                          {cat.count} Limited Pieces
                         </span>
                       </div>
                     </Link>
@@ -227,127 +222,107 @@ export const Navbar: React.FC = () => {
             </div>
 
             <Link
-              to="/shop?filter=deals"
-              className="text-sm font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1 transition-colors"
+              to="/shop?filter=limited"
+              className="text-xs uppercase tracking-widest font-bold text-stone-600 hover:text-aurelia-obsidian flex items-center gap-1.5 transition-colors"
             >
-              <span>Deals</span>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700">
-                Hot
+              <span>Limited Editions</span>
+              <span className="text-[9px] font-extrabold px-1.5 py-0.2 rounded bg-aurelia-gold/15 text-aurelia-goldDark border border-aurelia-gold/30">
+                1 OF 10
               </span>
+            </Link>
+
+            {/* Live Track Order */}
+            <Link
+              to="/track"
+              className={`text-xs uppercase tracking-widest font-extrabold flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all ${
+                location.pathname === '/track'
+                  ? 'bg-aurelia-gold text-white border-aurelia-gold shadow-sm'
+                  : 'bg-aurelia-goldLight text-aurelia-goldDark border-aurelia-goldBorder hover:bg-aurelia-gold hover:text-white'
+              }`}
+            >
+              <Navigation className="w-3.5 h-3.5 animate-pulse" />
+              <span>Live Track Order</span>
             </Link>
 
             <Link
               to="/checkout"
-              className={`text-sm font-semibold transition-colors ${
-                location.pathname === '/checkout' ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'
-              }`}
+              className="text-xs uppercase tracking-widest font-bold text-stone-600 hover:text-aurelia-obsidian transition-colors"
             >
               Checkout
             </Link>
           </nav>
 
-          {/* Right Action Icons (Wishlist, Cart, Mobile Toggle) */}
+          {/* Right Action Icons */}
           <div className="flex items-center gap-3">
-            {/* Wishlist Link */}
+            {/* Wishlist */}
             <Link
               to="/shop?filter=wishlist"
-              className="relative p-2.5 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-[#F8F9FE] transition-colors"
-              title="Wishlist"
+              className="relative p-2.5 rounded-lg text-stone-600 hover:text-aurelia-gold hover:bg-aurelia-alabaster transition-colors"
+              title="Private Wishlist"
             >
-              <Heart className="w-5 h-5" />
+              <Heart className="w-4 h-4" />
               {wishlist.length > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-rose-500 text-white text-[10px] font-bold flex items-center justify-center">
+                <span className="absolute top-1.5 right-1.5 w-3.5 h-3.5 rounded-full bg-aurelia-gold text-white text-[9px] font-bold flex items-center justify-center">
                   {wishlist.length}
                 </span>
               )}
             </Link>
 
-            {/* Cart Trigger Button */}
+            {/* Bag Trigger Button */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative flex items-center gap-2 px-3.5 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100/80 text-indigo-600 font-bold text-xs transition-colors"
-              aria-label="Open cart drawer"
+              className="relative flex items-center gap-2 px-3.5 py-2 rounded-lg bg-aurelia-obsidian hover:bg-stone-900 text-white font-ui font-bold text-xs shadow-sm transition-colors"
+              aria-label="Open Private Bag"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span className="hidden sm:inline font-display">Cart</span>
+              <ShoppingBag className="w-3.5 h-3.5 text-aurelia-gold" />
+              <span className="hidden sm:inline uppercase tracking-wider text-[11px]">Private Bag</span>
               {cartCount > 0 && (
-                <span className="w-5 h-5 rounded-full bg-indigo-600 text-white text-[10px] font-extrabold flex items-center justify-center shadow-sm">
+                <span className="w-4 h-4 rounded-full bg-aurelia-gold text-aurelia-obsidian text-[10px] font-extrabold flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
             </button>
 
-            {/* Mobile Menu Hamburger */}
+            {/* Mobile Menu */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors"
-              aria-label="Toggle navigation menu"
+              className="lg:hidden p-2 rounded-lg text-stone-700 hover:bg-aurelia-alabaster transition-colors"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
+        {/* Mobile Search */}
         <div className="md:hidden pb-3">
           <form onSubmit={handleSearchSubmit} className="relative">
             <input
               type="text"
-              placeholder="Search 20+ tech & desk items..."
+              placeholder="Search 20 serialized creations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#F8F9FE] border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500"
+              className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-aurelia-alabaster border border-aurelia-border text-xs text-aurelia-obsidian"
             />
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-3.5 h-3.5 text-stone-400 absolute left-2.5 top-2" />
           </form>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-4 animate-in fade-in slide-in-from-top-2">
-          <nav className="flex flex-col space-y-2">
-            <Link
-              to="/"
-              className="px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600"
-            >
-              Home
-            </Link>
-            <Link
-              to="/shop"
-              className="px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600"
-            >
-              Shop All Products
-            </Link>
-            <div className="py-2 border-y border-slate-100">
-              <span className="px-3 text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                Categories
-              </span>
-              <div className="grid grid-cols-2 gap-1">
-                {CATEGORIES.map((cat) => (
-                  <Link
-                    key={cat.name}
-                    to={`/category/${encodeURIComponent(cat.name)}`}
-                    className="px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg"
-                  >
-                    {cat.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <Link
-              to="/shop?filter=deals"
-              className="px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600"
-            >
-              Trending Deals
-            </Link>
-            <Link
-              to="/checkout"
-              className="px-3 py-2 rounded-lg font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-600"
-            >
-              Instant Checkout
-            </Link>
-          </nav>
+        <div className="lg:hidden bg-white border-b border-aurelia-border px-4 py-4 space-y-3">
+          <Link to="/" className="block py-2 text-xs uppercase tracking-widest font-bold text-aurelia-obsidian">
+            Maison Home
+          </Link>
+          <Link to="/shop" className="block py-2 text-xs uppercase tracking-widest font-bold text-stone-700">
+            All 20 Creations
+          </Link>
+          <Link to="/track" className="block py-2 text-xs uppercase tracking-widest font-bold text-aurelia-gold">
+            Live GPS Armored Courier Tracking
+          </Link>
+          <Link to="/checkout" className="block py-2 text-xs uppercase tracking-widest font-bold text-stone-700">
+            Private Checkout
+          </Link>
         </div>
       )}
     </header>

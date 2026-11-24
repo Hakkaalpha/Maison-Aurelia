@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Product, CartItem, OrderSummaryData } from '../types';
+import { Product, CartItem, OrderSummaryData, OrderAddress } from '../types';
 import { PRODUCTS } from '../data/products';
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: Product, quantity?: number, selectedColor?: string) => void;
+  addToCart: (product: Product, quantity?: number, selectedColor?: string, customInitials?: string) => void;
   removeFromCart: (productId: string, selectedColor?: string) => void;
   updateQuantity: (productId: string, quantity: number, selectedColor?: string) => void;
   clearCart: () => void;
@@ -23,32 +23,30 @@ interface CartContextType {
   isInWishlist: (productId: string) => boolean;
   lastOrder: OrderSummaryData | null;
   setLastOrder: (order: OrderSummaryData | null) => void;
+  getActiveTrackingOrder: () => OrderSummaryData;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CART_STORAGE_KEY = 'kinetix_cart_v1';
-const WISHLIST_STORAGE_KEY = 'kinetix_wishlist_v1';
-const LAST_ORDER_KEY = 'kinetix_last_order_v1';
+const CART_STORAGE_KEY = 'maison_aurelia_cart_v3';
+const WISHLIST_STORAGE_KEY = 'maison_aurelia_wishlist_v3';
+const LAST_ORDER_KEY = 'maison_aurelia_last_order_v3';
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Initialize cart from localStorage or pre-populate with default product for immediate review
+  // Pre-seed with flagship Tourbillon timepiece
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem(CART_STORAGE_KEY);
-      if (saved) {
-        return JSON.parse(saved);
-      }
+      if (saved) return JSON.parse(saved);
     } catch (e) {
-      console.error('Failed to parse cart storage', e);
+      console.error(e);
     }
-    // Default starter item: Roco Wireless Headphones
-    const defaultProduct = PRODUCTS[0];
+    const flagship = PRODUCTS[0];
     return [
       {
-        product: defaultProduct,
+        product: flagship,
         quantity: 1,
-        selectedColor: defaultProduct.colors[0]?.name || 'Default'
+        selectedColor: flagship.colors[0]?.name || 'Titanium Slate & Platinum'
       }
     ];
   });
@@ -58,9 +56,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const saved = localStorage.getItem(WISHLIST_STORAGE_KEY);
       if (saved) return JSON.parse(saved);
     } catch (e) {
-      console.error('Failed to parse wishlist', e);
+      console.error(e);
     }
-    return [PRODUCTS[0].id, PRODUCTS[2].id];
+    return [PRODUCTS[0].id, PRODUCTS[1].id, PRODUCTS[4].id];
   });
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -72,12 +70,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const saved = localStorage.getItem(LAST_ORDER_KEY);
       if (saved) return JSON.parse(saved);
     } catch (e) {
-      console.error('Failed to parse last order', e);
+      console.error(e);
     }
     return null;
   });
 
-  // Persist cart
+  // Local storage persistence
   useEffect(() => {
     try {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
@@ -86,7 +84,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, [cart]);
 
-  // Persist wishlist
   useEffect(() => {
     try {
       localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(wishlist));
@@ -95,7 +92,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, [wishlist]);
 
-  // Persist last order
   useEffect(() => {
     try {
       if (lastOrder) {
@@ -106,22 +102,21 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, [lastOrder]);
 
-  const addToCart = (product: Product, quantity = 1, selectedColor?: string) => {
+  const addToCart = (product: Product, quantity = 1, selectedColor?: string, customInitials?: string) => {
     const color = selectedColor || product.colors[0]?.name || 'Standard';
     setCart((prev) => {
-      const existingIndex = prev.findIndex(
+      const existing = prev.findIndex(
         (item) => item.product.id === product.id && item.selectedColor === color
       );
-      if (existingIndex > -1) {
+      if (existing > -1) {
         const next = [...prev];
-        next[existingIndex] = {
-          ...next[existingIndex],
-          quantity: next[existingIndex].quantity + quantity
+        next[existing] = {
+          ...next[existing],
+          quantity: next[existing].quantity + quantity
         };
         return next;
-      } else {
-        return [...prev, { product, quantity, selectedColor: color }];
       }
+      return [...prev, { product, quantity, selectedColor: color, customInitials }];
     });
     setIsCartOpen(true);
   };
@@ -167,13 +162,19 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const applyCoupon = (code: string) => {
     const clean = code.trim().toUpperCase();
-    if (clean === 'KINETIX10') {
+    if (clean === 'AURELIA10' || clean === 'PRIVE10') {
       const discount = Math.round(subtotal * 0.1);
-      setCouponCode('KINETIX10');
+      setCouponCode('AURELIA10');
       setCouponDiscount(discount);
-      return { success: true, message: `Coupon KINETIX10 applied! 10% (₹${discount.toLocaleString('en-IN')}) saved.` };
+      return {
+        success: true,
+        message: `Private Privilege Code AURELIA10 verified. 10% (₹${discount.toLocaleString('en-IN')}) allocation credit applied.`
+      };
     }
-    return { success: false, message: 'Invalid coupon code. Try KINETIX10 for 10% off.' };
+    return {
+      success: false,
+      message: 'Exclusive allocation code invalid. Use "AURELIA10" for 10% member privilege.'
+    };
   };
 
   const removeCoupon = () => {
@@ -188,6 +189,50 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const isInWishlist = (productId: string) => wishlist.includes(productId);
+
+  // Return active order for the Live GPS tracking page
+  const getActiveTrackingOrder = (): OrderSummaryData => {
+    if (lastOrder && lastOrder.items && lastOrder.items.length > 0) {
+      return lastOrder;
+    }
+
+    const defaultProduct = PRODUCTS[0];
+    const defaultAddress: OrderAddress = {
+      type: 'Residence',
+      fullName: 'Devraj S. Rathore',
+      mobile: '+91 98290 73910',
+      email: 'devraj.rathore@heritage-office.com',
+      city: 'Jaipur',
+      state: 'Rajasthan',
+      pincode: '302001',
+      locality: 'Civil Lines Enclave',
+      fullAddress: 'The Rathore Villa, 12 Jacob Road, Civil Lines',
+      scheduleDelivery: true,
+      deliveryDate: 'Today',
+      deliveryTime: 'White-Glove Armored Handover',
+      orderNote: 'Security gate authorized for Mercedes-Maybach GLS • RJ-14-AU-0001'
+    };
+
+    return {
+      orderId: 'AU-8842',
+      orderDate: 'Today',
+      items: [
+        {
+          product: defaultProduct,
+          quantity: 1,
+          selectedColor: 'Titanium Slate & Platinum'
+        }
+      ],
+      subtotal: 145000,
+      discount: 14500,
+      deliveryFee: 0,
+      total: 130500,
+      savings: 44500,
+      couponCode: 'AURELIA10',
+      address: defaultAddress,
+      otpCode: '7391'
+    };
+  };
 
   return (
     <CartContext.Provider
@@ -211,7 +256,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         toggleWishlist,
         isInWishlist,
         lastOrder,
-        setLastOrder
+        setLastOrder,
+        getActiveTrackingOrder
       }}
     >
       {children}

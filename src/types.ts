@@ -1,57 +1,55 @@
-export type ProductCategory = 
-  | 'Audio'
-  | 'Keyboards & Mice'
-  | 'Gaming'
-  | 'Smart Accessories'
-  | 'Webcams & Speakers'
-  | 'Desk Setup';
+export type MaisonCategory =
+  | 'Horology'
+  | 'Bespoke Leather'
+  | 'Haute Parfumerie'
+  | 'Eyewear & Pens'
+  | 'Collector Objects'
+  | 'Atelier Audio';
 
 export interface ProductSpec {
   label: string;
   value: string;
 }
 
-export interface ProductReview {
-  id: string;
-  author: string;
-  rating: number;
-  date: string;
-  comment: string;
-  verified: boolean;
-}
-
 export interface Product {
   id: string;
+  sku: string;
   name: string;
   subtitle: string;
-  category: ProductCategory;
+  category: MaisonCategory;
   price: number;
   originalPrice: number;
-  discountPercent?: number;
   rating: number;
   reviewCount: number;
   image: string;
   gallery: string[];
   description: string;
-  badge?: 'Best Seller' | '20% OFF' | '15% OFF' | '10% OFF' | 'New' | 'Trending' | 'Popular';
+  badge?: 'Collector First Edition' | 'Private Reserve' | 'Vault Selection' | 'Limited Atelier' | 'Numbered Run';
   inStock: boolean;
   featured?: boolean;
   trending?: boolean;
-  newArrival?: boolean;
+  edition: string;           // e.g. "Edition of 10"
+  editionNumber: number;     // e.g. 10
+  claimed: number;           // e.g. 8
+  remaining: number;         // e.g. 2
+  materials: string[];       // e.g. ["Swiss Manual-Wind Movement", "Curved Double-Dome Sapphire", "Grade-5 Titanium"]
+  provenance: string;        // e.g. "Geneva, Switzerland"
   features: string[];
   specs: ProductSpec[];
   colors: { name: string; hex: string }[];
-  sku: string;
+  exclusiveOnly: boolean;
+  limitedEdition: boolean;
 }
 
 export interface CartItem {
   product: Product;
   quantity: number;
   selectedColor?: string;
+  customInitials?: string;
 }
 
 export interface OrderAddress {
-  type: 'Home' | 'Work';
+  type: 'Residence' | 'Private Office';
   fullName: string;
   mobile: string;
   email: string;
@@ -73,9 +71,9 @@ export interface OrderSummaryData {
   subtotal: number;
   discount: number;
   deliveryFee: number;
-  convenienceFee: number;
   total: number;
   savings: number;
   address: OrderAddress;
   couponCode?: string;
+  otpCode: string;
 }

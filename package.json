@@ -1,5 +1,5 @@
 {
-  "name": "kinetix-desk",
+  "name": "maison-aurelia",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,8 +11,10 @@
   "dependencies": {
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.2",
+    "@types/leaflet": "^1.9.22",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.359.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

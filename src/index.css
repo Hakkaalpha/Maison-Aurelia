@@ -1,3 +1,5 @@
+@import 'leaflet/dist/leaflet.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,56 +10,90 @@
   }
   
   body {
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: #0F172A;
-    background-color: #F8F9FE;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0B0C10;
+    background-color: #FAFAFA;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #4F46E5;
+    background-color: #B89653;
     color: #FFFFFF;
   }
 }
 
-/* Custom subtle scrollbar */
+/* Custom luxury scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #F2EFEB;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
+  background: #D9C39B;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #B89653;
 }
 
-/* Floating animation helper */
+/* Subtle float animation */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 4.5s ease-in-out infinite;
 }
 
-.animate-float-slow {
-  animation: float 6s ease-in-out infinite;
+/* Radar pulse animation for Leaflet live courier marker */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }
 
-/* Subtle lavender glow */
-.lavender-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, rgba(248, 249, 254, 0) 70%);
+.animate-radar {
+  animation: radar-pulse 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+/* Leaflet container fixes */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  z-index: 10;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Override Leaflet popup styles to match Kinetix Privé */
+.leaflet-popup-content-wrapper {
+  background-color: #0B0C10;
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(184, 150, 83, 0.4);
+}
+
+.leaflet-popup-tip {
+  background-color: #0B0C10;
 }
