@@ -105,15 +105,15 @@ export const CheckoutPage: React.FC = () => {
 
     const fullShippingAddress = `[${addressType}] ${fullAddress}, ${locality}, ${city}, ${state} - ${pincode} (Tel: ${mobile})`;
 
-    // Prepare Google Forms submission payload
-    const formData = new FormData();
-    formData.append(ENTRY_IDS.name, fullName);
-    formData.append(ENTRY_IDS.email, email);
-    formData.append(ENTRY_IDS.phone, mobile);
-    formData.append(ENTRY_IDS.address, fullShippingAddress);
-    formData.append(ENTRY_IDS.itemsSummary, itemsSummary);
-    formData.append(ENTRY_IDS.totalAmount, `₹${payableAmount.toLocaleString('en-IN')}`);
-    formData.append(
+    // Prepare Google Forms submission payload using URLSearchParams (application/x-www-form-urlencoded)
+    const formParams = new URLSearchParams();
+    formParams.append(ENTRY_IDS.name, fullName);
+    formParams.append(ENTRY_IDS.email, email);
+    formParams.append(ENTRY_IDS.phone, mobile);
+    formParams.append(ENTRY_IDS.address, fullShippingAddress);
+    formParams.append(ENTRY_IDS.itemsSummary, itemsSummary);
+    formParams.append(ENTRY_IDS.totalAmount, `₹${payableAmount.toLocaleString('en-IN')}`);
+    formParams.append(
       ENTRY_IDS.note,
       `Allocation Order #${generatedOrderId}. Concierge: ${orderNote || 'Standard Protocol'}. Schedule: ${
         scheduleDelivery ? `${deliveryDate} at ${deliveryTime}` : 'Immediate White-Glove Armored Dispatch'
@@ -124,7 +124,10 @@ export const CheckoutPage: React.FC = () => {
       await fetch(GOOGLE_FORM_ACTION_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formParams.toString()
       });
     } catch (err) {
       console.warn('Google Form submission ping completed:', err);
@@ -257,24 +260,20 @@ export const CheckoutPage: React.FC = () => {
               </button>
             </div>
 
-            {/* Placeholder Container */}
-            <div className="min-h-[750px] w-full border-2 border-dashed border-aurelia-border rounded-xl flex flex-col items-center justify-center p-8 text-center bg-aurelia-alabaster">
-              <Sheet className="w-12 h-12 text-aurelia-gold mb-3" />
-              <span className="text-xs font-mono font-bold bg-aurelia-goldLight text-aurelia-goldDark px-3 py-1 rounded-full mb-2">
-                &lt;!-- PASTE GOOGLE FORM IFRAME HERE --&gt;
-              </span>
-              <h4 className="font-serif font-bold text-xl text-aurelia-obsidian mb-1">
-                Google Form Embed Container
-              </h4>
-              <p className="text-xs text-stone-500 max-w-md mb-6 leading-relaxed">
-                Paste your Google Form embed URL here or use our seamless 2-column white-glove checkout.
-              </p>
-              <button
-                onClick={() => setActiveTab('standard')}
-                className="px-6 py-2.5 rounded bg-aurelia-obsidian text-aurelia-gold font-bold text-xs uppercase tracking-widest shadow-sm"
+            {/* Live Google Form Iframe Container */}
+            <div className="w-full rounded-2xl overflow-hidden border border-aurelia-border shadow-inner bg-white">
+              <iframe
+                src={GOOGLE_FORM_CONFIG.IFRAME_URL}
+                width="100%"
+                height="820"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                className="w-full min-h-[820px] rounded-2xl"
+                title="MAISON AURELIA Google Form Checkout"
               >
-                Switch to 2-Column Handover Form
-              </button>
+                Loading form…
+              </iframe>
             </div>
           </div>
         ) : (

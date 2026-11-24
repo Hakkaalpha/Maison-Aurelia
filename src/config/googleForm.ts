@@ -1,33 +1,36 @@
 /**
- * Google Form Integration Configuration for Kinetix Tech
+ * Google Form Integration Configuration for MAISON AURELIA
  * 
- * Instructions:
- * 1. Create a Google Form with fields: Full Name, Email, Phone, Shipping Address, Ordered Items, Total Amount, Notes
- * 2. Get the pre-filled link to identify the entry IDs (entry.XXXXXX)
- * 3. Replace the placeholder IDs below with your Google Form entry IDs
- * 4. Replace the form response URL with your Google Form's formResponse URL
+ * Form Title: MAISON AURELIA — Private Allocation Checkout
+ * Base URL: https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform
+ * Action URL: https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/formResponse
  */
 
 export const GOOGLE_FORM_CONFIG = {
-  // Replace with your Google Form action endpoint:
-  // e.g. "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc_EXAMPLE_FORM_ID/formResponse"
-  ACTION_URL: "https://docs.google.com/forms/d/e/1FAIpQLSc_EXAMPLE_FORM_ID/formResponse",
+  FORM_ID: "1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q",
+  VIEW_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform",
+  ACTION_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/formResponse",
+  IFRAME_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform?embedded=true",
 
-  // Mapping of form field keys to your Google Form entry IDs
+  // Extracted live field entry IDs
   ENTRY_IDS: {
-    name: "entry.1000001",
-    email: "entry.1000002",
-    phone: "entry.1000003",
-    address: "entry.1000004",
-    itemsSummary: "entry.1000005",
-    totalAmount: "entry.1000006",
-    note: "entry.1000007",
-    deliverySchedule: "entry.1000008"
-  },
-
-  // Sample or actual Iframe URL for the direct embed toggle option
-  IFRAME_URL: "https://docs.google.com/forms/d/e/1FAIpQLSc_EXAMPLE_FORM_ID/viewform?embedded=true"
+    // Client Full Name
+    name: "entry.941129759",
+    // Email Address
+    email: "entry.1686615183",
+    // Mobile Number
+    phone: "entry.1111228976",
+    // Full Delivery Address & Location Type
+    address: "entry.1737326485",
+    // Serialized Creations Ordered Summary
+    itemsSummary: "entry.167160300",
+    // Total Payable Amount in INR
+    totalAmount: "entry.1740003243",
+    // White-Glove Handover Schedule & Concierge Instructions
+    note: "entry.1106219504"
+  }
 };
 
 export const GOOGLE_FORM_ACTION_URL = GOOGLE_FORM_CONFIG.ACTION_URL;
 export const ENTRY_IDS = GOOGLE_FORM_CONFIG.ENTRY_IDS;
+export default GOOGLE_FORM_CONFIG;
