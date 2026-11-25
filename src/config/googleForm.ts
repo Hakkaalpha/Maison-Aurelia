@@ -8,9 +8,9 @@
 
 export const GOOGLE_FORM_CONFIG = {
   FORM_ID: "1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q",
-  VIEW_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform",
-  ACTION_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/formResponse",
-  IFRAME_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform?embedded=true",
+  VIEW_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform?usp=header",
+  ACTION_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform?usp=header",
+  IFRAME_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfMzpWvyuhqNp5HoNFaEIvBboxuWq3GeR9CX2FoieRTUEur2Q/viewform?usp=header",
 
   // Extracted live field entry IDs
   ENTRY_IDS: {
